@@ -15,8 +15,8 @@ function setupUserEvent(jsx) {
 
 test('it shows the title in the banner', () => {
 	setup();
-	// We expect that the title 'Hi, Iam Stoman' is in the banner component
-	expect(screen.getByText(/Hi, Iam Stoman/i)).toBeInTheDocument();
+	// We expect that the title 'Hi, Mika Wisener' is in the banner component
+	expect(screen.getByText(/Hi, I'm Mika/i)).toBeInTheDocument();
 });
 
 test('can download cv when clicked on download cv button', async () => {

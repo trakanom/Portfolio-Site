@@ -9,7 +9,7 @@ import UIImage2 from '../images/ui-project-2.jpg';
 export const projectsData = [
 	{
 		id: 1,
-		title: 'Google Health Platform',
+		title: 'Nope',
 		category: 'Web Application',
 		img: WebImage2,
 		ProjectHeader: {
