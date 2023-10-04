@@ -3,9 +3,14 @@ import { FiX } from 'react-icons/fi';
 import Button from './reusable/Button';
 
 const selectOptions = [
-	'Optimization',
-	'Tools and Scripts',
-	'Data Projects',
+	// 'Web Application',
+	// 'Mobile Application',
+	// 'UI/UX Design',
+	// 'Branding',
+	'IT',
+	'Engineering',
+	'Management',
+	'Analysis',
 ];
 
 const HireMeModal = ({ onClose, onRequest }) => {

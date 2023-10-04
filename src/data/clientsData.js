@@ -13,42 +13,37 @@ export const clientsHeading = 'Some of the brands that trust me';
 export const clientsData = [
 	{
 		id: 1,
-		title: 'Amazon',
+		title: 'First Sierra Dental',
 		img: AmazonImage,
 	},
 	{
 		id: 2,
-		title: 'Sony',
+		title: 'Alchemix',
 		img: SonyImage,
 	},
 	{
 		id: 3,
-		title: 'Adidas',
+		title: 'ElasticDao',
 		img: AdidasImage,
 	},
 	{
 		id: 4,
-		title: 'FILA',
+		title: 'Kiwanis',
 		img: FilaImage,
 	},
 	{
 		id: 5,
-		title: 'NB',
+		title: 'Clovis Unified School District',
 		img: NBImage,
 	},
 	{
 		id: 6,
-		title: 'SAMSUNG',
+		title: 'Sony Online Entertainment',
 		img: SamsungImage,
 	},
 	{
 		id: 7,
-		title: 'CANON',
+		title: 'Simple Securities',
 		img: CanonImage,
-	},
-	{
-		id: 8,
-		title: 'PUMA',
-		img: PumaImage,
 	},
 ];

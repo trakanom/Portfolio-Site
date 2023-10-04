@@ -15,7 +15,7 @@ function setupUserEvent(jsx) {
 
 test('it shows the title in the banner', () => {
 	setup();
-	// We expect that the title 'Hi, Mika Wisener' is in the banner component
+	// We expect that the title 'Hi, I'm Mika' is in the banner component
 	expect(screen.getByText(/Hi, I'm Mika/i)).toBeInTheDocument();
 });
 
@@ -39,7 +39,7 @@ test('can download cv when clicked on download cv button', async () => {
 	// 	() => downloadLink
 	// );
 
-	// expect(downloadLink.download).toEqual('Stoman-Resume.pdf');
-	// expect(downloadLink.href).toEqual('/files/Stoman-Resume.pdf');
+	// expect(downloadLink.download).toEqual('Mika-Resume.pdf');
+	// expect(downloadLink.href).toEqual('/files/Mika-Resume.pdf');
 	// expect(downloadLink.click).toHaveBeenCalledTimes(1);
 });

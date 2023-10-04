@@ -1,6 +1,5 @@
 /*== 
  * React & TailwindCSS Portfolio Main CSS File
- * Powered by: @realstoman
 */
 
 body {
@@ -228,6 +227,7 @@ body {
 	0% {
 		opacity: 0;
 	}
+
 	100% {
 		opacity: 0.5;
 	}
