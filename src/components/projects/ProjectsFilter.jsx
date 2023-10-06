@@ -1,17 +1,18 @@
-const selectOptions = [
-	// 'Web Application',
-	// 'Mobile Application',
-	// 'UI/UX Design',
-	// 'Branding',
-	'Optimization',
-	'Tools and Scripts',
-	'Data Projects',
-	'IT',
-	'Engineering',
-	'Management',
-	'Analysis',
+// const selectOptions = [
+// 	// 'Web Application',
+// 	// 'Mobile Application',
+// 	// 'UI/UX Design',
+// 	// 'Branding',
+// 	'Optimization',
+// 	'Tools and Scripts',
+// 	'Data Projects',
+// 	'IT',
+// 	'Engineering',
+// 	'Management',
+// 	'Analysis',
 
-];
+// ];
+import selectOptions from '../../data/categoryData'
 
 const ProjectsFilter = ({ setSelectProject }) => {
 	return (

@@ -1,8 +1,8 @@
 import { motion } from 'framer-motion';
 import { FiX } from 'react-icons/fi';
 import Button from './reusable/Button';
-
-const selectOptions = [
+import React, { useState, useEffect } from 'react';
+import selectOptions from '../../src/data/categoryData'
 	// 'Web Application',
 	// 'Mobile Application',
 	// 'UI/UX Design',
@@ -77,15 +77,18 @@ const HireMeModal = ({ onClose, onRequest }) => {
 										required=""
 										aria-label="Project Category"
 									>
-										{selectOptions.map((option) => (
+										{
+											selectOptions && selectOptions.map((option) => (
 											<option
 												className="text-normal sm:text-md"
 												key={option}
 											>
 												{option}
 											</option>
-										))}
+											))
+										}
 									</select>
+
 								</div>
 
 								<div className="mt-6">
