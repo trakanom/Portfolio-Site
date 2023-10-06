@@ -1,19 +1,36 @@
 import { motion } from 'framer-motion';
 import { FiX } from 'react-icons/fi';
 import Button from './reusable/Button';
+import React, { useState, useEffect } from 'react';
+import selectOptions from '../../src/data/categoryData';
+import Loading from './reusable/Loading';
+// const fallbackSelectOptions = [
+// 	// 'Web Application',
+// 	// 'Mobile Application',
+// 	// 'UI/UX Design',
+// 	// 'Branding',
+// 	'IT',
+// 	'Engineering',
+// 	'Management',
+// 	'Analysis',
+// ];
 
-const selectOptions = [
-	// 'Web Application',
-	// 'Mobile Application',
-	// 'UI/UX Design',
-	// 'Branding',
-	'IT',
-	'Engineering',
-	'Management',
-	'Analysis',
-];
+
 
 const HireMeModal = ({ onClose, onRequest }) => {
+	const [isLoading, setIsLoading] = useState(true);
+
+	useEffect(() => {
+		// Check if data is loaded
+		if (selectOptions && selectOptions.length > 0) {
+			setIsLoading(false);
+		}
+	}, []);
+
+	if (isLoading) {
+		return <Loading />; // Render the Loading component if still loading
+	}
+
 	return (
 		<motion.div
 			initial={{ opacity: 0 }}
@@ -77,15 +94,18 @@ const HireMeModal = ({ onClose, onRequest }) => {
 										required=""
 										aria-label="Project Category"
 									>
-										{selectOptions.map((option) => (
-											<option
-												className="text-normal sm:text-md"
-												key={option}
-											>
-												{option}
-											</option>
-										))}
+										{
+											selectOptions && selectOptions.map((option) => (
+												<option
+													className="text-normal sm:text-md"
+													key={option}
+												>
+													{option}
+												</option>
+											))
+										}
 									</select>
+
 								</div>
 
 								<div className="mt-6">
@@ -140,5 +160,5 @@ const HireMeModal = ({ onClose, onRequest }) => {
 		</motion.div>
 	);
 };
-
+// console.log(selectOptions);
 export default HireMeModal;
