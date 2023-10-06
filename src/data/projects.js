@@ -2,11 +2,13 @@
 import ParserImage1 from '../images/projects/bank_statement_conversion.png';
 import VideoImage1 from '../images/projects/video_compression.png';
 import DentalImage1 from '../images/projects/covid.png';
+import DentalImage2 from '../images/projects/covid-resized.png';
 import ETLImage1 from '../images/projects/job_platform.png';
 import BottingImage1 from '../images/projects/botting.png';
 import OptimizationImage1 from '../images/projects/optimization_consulting.png';
 import SecurityImage1 from '../images/projects/security_consulting3.png';
 import LifeImage1 from '../images/projects/life2.png';
+import LifeImage2 from '../images/projects/life_animation.mp4';
 import UIImage1 from '../images/ui-project-1.jpg';
 import UIImage2 from '../images/ui-project-2.jpg';
 
@@ -34,7 +36,7 @@ export const projectsData = [
 		id: 1,
 		title: 'Personal Health Platform',
 		category: 'Analysis',
-		img: DentalImage1,
+		img: DentalImage2,
 		ProjectHeader: {
 			title: 'Project Management UI - From Context',
 			publishDate: 'Jul 26, 2021',
@@ -54,7 +56,7 @@ export const projectsData = [
 			{
 				id: 3,
 				title: 'Kabul Project Management UI',
-				img: Image3,
+				img: LifeImage1,
 			},
 		],
 		ProjectInfo: {
@@ -384,7 +386,7 @@ export const projectsData = [
 	},
 	{
 		id: 7,
-		title: 'The Game of Life (Terminal Edition)',
+		title: 'Terminal Game of Life',
 		category: 'Game Development',
 		description: [
 			'Creating an ASCII version of Conway’s Game of Life with Python was a nostalgic and fun project, blending classic game theory with modern coding. The project used set theory and number theory to create a novel, albeit not the most efficient, algorithm. The fun part was seeing the ASCII characters come to life in the console, creating a dynamic, evolving pattern. The challenge was balancing performance with novelty in the algorithm. If revisited, I’d explore more efficient algorithms and perhaps create a GUI version of the game.',
