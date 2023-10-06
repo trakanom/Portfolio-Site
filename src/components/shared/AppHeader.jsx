@@ -47,7 +47,7 @@ const AppHeader = () => {
 				<div className="flex justify-between items-center px-4 sm:px-0">
 					<div>
 						<Link to="/">
-							{activeTheme === 'dark' ? (
+							{activeTheme === 'light' ? (
 								<img
 									src={logoDark}
 									className="w-24 max-w-3242 max-h-24"
