@@ -8,15 +8,17 @@ import BottingImage1 from '../images/projects/botting.png';
 import OptimizationImage1 from '../images/projects/optimization_consulting.png';
 import SecurityImage1 from '../images/projects/security_consulting3.png';
 import LifeImage1 from '../images/projects/life2.png';
-import LifeImage2 from '../images/projects/life_animation.mp4';
-import UIImage1 from '../images/ui-project-1.jpg';
-import UIImage2 from '../images/ui-project-2.jpg';
-import Image1 from '../images/ui-project-1.jpg';
-import Image2 from '../images/web-project-2.jpg';
+// import LifeImage2 from '../images/projects/life_animation.mp4';
+// import UIImage1 from '../images/ui-project-1.jpg';
+// import UIImage2 from '../images/ui-project-2.jpg';
+// import Image1 from '../images/ui-project-1.jpg';
+// import Image2 from '../images/web-project-2.jpg';
 import Image3 from '../images/mobile-project-2.jpg';
 import Image4 from '../images/mobile-project-1.jpg';
 import Image5 from '../images/web-project-1.jpg';
 import Image6 from '../images/ui-project-2.jpg';
+
+
 
 export const projectsData = [
 	{

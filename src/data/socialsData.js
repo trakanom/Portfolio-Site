@@ -1,10 +1,10 @@
 // src/data/socialsData.js
 import {
     FiFacebook,
-    FiInstagram,
+    // FiInstagram,
     FiLinkedin,
     FiTwitter,
-    FiYoutube,
+    // FiYoutube,
 } from 'react-icons/fi';
 
 const baseURL = window.location.origin; // Fetches the base URL dynamically
