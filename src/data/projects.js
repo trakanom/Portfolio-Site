@@ -31,6 +31,9 @@ import Image3 from '../images/mobile-project-2.jpg';
 import Image4 from '../images/mobile-project-1.jpg';
 import Image5 from '../images/web-project-1.jpg';
 import Image6 from '../images/ui-project-2.jpg';
+export const headingsData = {
+	ProjectHeader:
+}
 export const projectsData = [
 	{
 		id: 1,
@@ -124,32 +127,6 @@ export const projectsData = [
 				},
 			],
 			SocialSharingHeading: 'Share This',
-			SocialSharing: [
-				{
-					id: 1,
-					name: 'Twitter',
-					icon: <FiTwitter />,
-					url: 'https://twitter.com/',
-				},
-				{
-					id: 2,
-					name: 'Instagram',
-					icon: <FiInstagram />,
-					url: 'https://instagram.com/',
-				},
-				{
-					id: 3,
-					name: 'LinkedIn',
-					icon: <FiLinkedin />,
-					url: 'https://linkedin.com/',
-				},
-				{
-					id: 4,
-					name: 'Youtube',
-					icon: <FiYoutube />,
-					url: 'https://www.youtube.com/',
-				},
-			],
 		},
 		RelatedProject: {
 			title: 'Related Projects',
@@ -243,33 +220,6 @@ export const projectsData = [
 				// Additional project details can be added here
 			],
 			SocialSharingHeading: 'Share This',
-			SocialSharing: [
-				{
-					id: 1,
-					name: 'Twitter',
-					icon: <FiTwitter />,
-					url: 'https://twitter.com/',
-				},
-				{
-					id: 2,
-					name: 'Instagram',
-					icon: <FiInstagram />,
-					url: 'https://instagram.com/',
-				},
-				{
-					id: 3,
-					name: 'LinkedIn',
-					icon: <FiLinkedin />,
-					url: 'https://linkedin.com/',
-				},
-				{
-					id: 4,
-					name: 'Youtube',
-					icon: <FiYoutube />,
-					url: 'https://www.youtube.com/',
-				},
-			],
-
 		},
 		RelatedProject: {
 			title: 'Related Projects',

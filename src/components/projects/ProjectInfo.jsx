@@ -1,6 +1,6 @@
 import React from 'react';
 import { useSingleProject } from '../../context/SingleProjectContext';
-
+import ProjectSocials from './ProjectSocials';
 const ProjectInfo = () => {
 	const { projectData, error } = useSingleProject();
 
@@ -18,7 +18,6 @@ const ProjectInfo = () => {
 	const hasCompanyInfo = ProjectInfo?.CompanyInfo?.length > 0;
 	const hasTechnologies = ProjectInfo?.Technologies?.[0]?.techs?.length > 0;
 	const hasObjectives = ProjectInfo?.ObjectivesDetails?.length > 0;
-	const hasSocialSharing = ProjectInfo?.SocialSharing?.length > 0;
 	const hasProjectDetails = ProjectInfo?.ProjectDetails?.length > 0;
 
 	return (
@@ -67,30 +66,12 @@ const ProjectInfo = () => {
 					</div>
 				)}
 				{/* Single project social sharing */}
-				{hasSocialSharing && (
+				{projectData.id && (
 					<div>
 						<p className="font-general-regular text-2xl font-semibold text-ternary-dark dark:text-ternary-light mb-2">
-							{ProjectInfo.SocialSharingHeading}
+							Share this project
 						</p>
-						<div className="flex items-center gap-3 mt-5">
-							{ProjectInfo.SocialSharing.map(
-								(social) => {
-									return (
-										<a
-											key={social.id}
-											href={social.url}
-											target="__blank"
-											aria-label="Share Project"
-											className="bg-ternary-light dark:bg-ternary-dark text-gray-400 hover:text-primary-dark dark:hover:text-primary-light p-2 rounded-lg shadow-sm duration-500"
-										>
-											<span className="text-lg lg:text-2xl">
-												{social.icon}
-											</span>
-										</a>
-									);
-								}
-							)}
-						</div>
+						<ProjectSocials projectId={projectData.id} />
 					</div>
 				)
 				}
