@@ -11,13 +11,6 @@ import LifeImage1 from '../images/projects/life2.png';
 import LifeImage2 from '../images/projects/life_animation.mp4';
 import UIImage1 from '../images/ui-project-1.jpg';
 import UIImage2 from '../images/ui-project-2.jpg';
-
-
-// export const projectsData = [
-
-
-
-
 import Image1 from '../images/ui-project-1.jpg';
 import Image2 from '../images/web-project-2.jpg';
 import Image3 from '../images/mobile-project-2.jpg';
