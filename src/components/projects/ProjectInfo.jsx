@@ -1,6 +1,7 @@
 import React from 'react';
 import { useSingleProject } from '../../context/SingleProjectContext';
 import ProjectSocials from './ProjectSocials';
+import HeaderInfo from '../../data/defaultsData'
 const ProjectInfo = () => {
 	const { projectData, error } = useSingleProject();
 
@@ -27,7 +28,7 @@ const ProjectInfo = () => {
 				{hasCompanyInfo && (
 					<div className="mb-7">
 						<p className="font-general-regular text-2xl font-semibold text-secondary-dark dark:text-secondary-light mb-2">
-							{ProjectInfo.ClientHeading || 'Client Information'}
+							{ProjectInfo.ClientHeading || HeaderInfo.ClientHeading}
 						</p>
 						<ul className="leading-loose">
 							{ProjectInfo.CompanyInfo.map(info => (
@@ -46,7 +47,7 @@ const ProjectInfo = () => {
 				{hasObjectives && (
 					<div className="mb-7">
 						<p className="font-general-regular text-2xl font-semibold text-ternary-dark dark:text-ternary-light mb-2">
-							{ProjectInfo.ObjectivesHeading || 'Objectives'}
+							{ProjectInfo.ObjectivesHeading || HeaderInfo.ObjectivesHeading}
 						</p>
 						<p className="font-general-regular text-primary-dark dark:text-ternary-light">
 							{ProjectInfo.ObjectivesDetails}
@@ -58,7 +59,7 @@ const ProjectInfo = () => {
 				{hasTechnologies && (
 					<div className="mb-7">
 						<p className="font-general-regular text-2xl font-semibold text-ternary-dark dark:text-ternary-light mb-2">
-							{ProjectInfo.Technologies[0].title || 'Technologies Used'}
+							{ProjectInfo.Technologies[0].title || HeaderInfo.TechnologyHeader}
 						</p>
 						<p className="font-general-regular text-primary-dark dark:text-ternary-light">
 							{ProjectInfo.Technologies[0].techs.join(', ')}
@@ -81,7 +82,7 @@ const ProjectInfo = () => {
 			{hasProjectDetails && (
 				<div className="w-full sm:w-2/3 text-left mt-10 sm:mt-0">
 					<p className="font-general-regular text-primary-dark dark:text-primary-light text-2xl font-bold mb-7">
-						{ProjectInfo.ProjectDetailsHeading}
+						{ProjectInfo.ProjectDetailsHeading || HeaderInfo.ProjectDetailsHeading}
 					</p>
 					{ProjectInfo.ProjectDetails.map((details) => {
 						return (

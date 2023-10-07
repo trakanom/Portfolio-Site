@@ -17,13 +17,6 @@ import UIImage2 from '../images/ui-project-2.jpg';
 
 
 
-import {
-	FiFacebook,
-	FiInstagram,
-	FiLinkedin,
-	FiTwitter,
-	FiYoutube,
-} from 'react-icons/fi';
 
 import Image1 from '../images/ui-project-1.jpg';
 import Image2 from '../images/web-project-2.jpg';
@@ -31,9 +24,7 @@ import Image3 from '../images/mobile-project-2.jpg';
 import Image4 from '../images/mobile-project-1.jpg';
 import Image5 from '../images/web-project-1.jpg';
 import Image6 from '../images/ui-project-2.jpg';
-export const headingsData = {
-	ProjectHeader:
-}
+
 export const projectsData = [
 	{
 		id: 1,
@@ -63,7 +54,6 @@ export const projectsData = [
 			},
 		],
 		ProjectInfo: {
-			ClientHeading: 'About Client',
 			CompanyInfo: [
 				{
 					id: 1,
@@ -86,12 +76,10 @@ export const projectsData = [
 					details: '555 8888 888',
 				},
 			],
-			ObjectivesHeading: 'Objective',
 			ObjectivesDetails:
 				'Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio, natus! Quibusdam enim quod in esse, mollitia molestias incidunt quas ipsa accusamus veniam.',
 			Technologies: [
 				{
-					title: 'Tools & Technologies',
 					techs: [
 						'HTML',
 						'CSS',
@@ -103,7 +91,6 @@ export const projectsData = [
 					],
 				},
 			],
-			ProjectDetailsHeading: 'Challenge',
 			ProjectDetails: [
 				{
 					id: 1,
@@ -126,7 +113,6 @@ export const projectsData = [
 						'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nihil vel illum asperiores dignissimos cumque quibusdam et fugiat voluptatem nobis suscipit explicabo, eaque consequatur nesciunt, fugit eligendi corporis laudantium adipisci soluta? Lorem ipsum, dolor sit amet consectetur adipisicing elit. Incidunt totam dolorum, ducimus obcaecati, voluptas facilis molestias nobis ut quam natus similique inventore excepturi optio ipsa deleniti fugit illo. Unde, amet! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum illo necessitatibus perspiciatis! Aperiam perferendis labore temporibus, eos culpa corporis recusandae quas, fuga voluptatibus nesciunt odit libero tenetur neque consequatur ea.',
 				},
 			],
-			SocialSharingHeading: 'Share This',
 		},
 		RelatedProject: {
 			title: 'Related Projects',
@@ -174,7 +160,6 @@ export const projectsData = [
 			// Additional images can be added here
 		],
 		ProjectInfo: {
-			ClientHeading: 'About Client',
 			CompanyInfo: [
 				{
 					id: 1,
@@ -197,7 +182,6 @@ export const projectsData = [
 					details: '555 8888 888',
 				},
 			],
-			ObjectivesHeading: 'Objective',
 			ObjectivesDetails:
 				'Embarking on a journey to compress video files, I engineered a Python-based script that utilized bit rate density analysis and hardware-accelerated encoding. The challenge was to maintain video quality while significantly reducing file size.',
 			Technologies: [
