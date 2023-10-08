@@ -17,6 +17,7 @@ import Loading from './reusable/Loading';
 
 
 
+
 const HireMeModal = ({ onClose, onRequest }) => {
 	const [isLoading, setIsLoading] = useState(true);
 
