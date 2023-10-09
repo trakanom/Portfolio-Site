@@ -4,16 +4,16 @@ import { useSingleProject } from '../../context/SingleProjectContext';
 
 function ProjectSingleHeader({ data }) {
 	const { projectData, error } = useSingleProject();
-	// if (!data) {
-	// 	return null; // or return null, or a loader component
-	// }
-	// if (error) {
-	// 	return <p>Error loading project header</p>;
-	// }
+	if (!data) {
+		return null; // or return null, or a loader component
+	}
+	if (error) {
+		return <p>Error loading project header</p>;
+	}
 
-	// if (!projectData) {
-	// 	return <p>Loading...</p>;
-	// }
+	if (!projectData) {
+		return <p>Loading...</p>;
+	}
 
 	const { ProjectHeader } = projectData;
 
