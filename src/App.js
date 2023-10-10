@@ -1,4 +1,4 @@
-import React, { Suspense } from 'react';
+import React, { Suspense, useState } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { AnimatePresence } from 'framer-motion';
 import ScrollToTop from './components/ScrollToTop';
@@ -7,6 +7,7 @@ import AppHeader from './components/shared/AppHeader';
 import UseScrollToTop from './hooks/useScrollToTop';
 import { SingleProjectProvider } from './context/SingleProjectContext';
 import './css/App.css';
+import UnderConstructionSplash from './components/UnderConstructionSplash';
 
 // Lazy-loaded components
 const About = React.lazy(() => import('./pages/AboutMe'));
@@ -17,7 +18,10 @@ const ProjectSingle = React.lazy(() => import('./pages/ProjectSingle'));
 
 
 function App() {
+	const [showSplash, setShowSplash] = useState(true);
 	return (
+		<div classname="App">
+			{showSplash && <UnderConstructionSplash onClose={() => setShowSplash(false)} />}
 		<AnimatePresence>
 			<div className=" bg-secondary-light dark:bg-primary-dark transition duration-300">
 				<Router>
@@ -41,6 +45,7 @@ function App() {
 				<UseScrollToTop />
 			</div>
 		</AnimatePresence>
+		</div>
 	);
 }
 
