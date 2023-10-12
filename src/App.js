@@ -14,7 +14,7 @@ const Contact = React.lazy(() => import('./pages/Contact'));
 const Home = React.lazy(() => import('./pages/Home'));
 const Projects = React.lazy(() => import('./pages/Projects'));
 const ProjectSingle = React.lazy(() => import('./pages/ProjectSingle'));
-
+const RolesPage = React.lazy(() => import('./pages/RolesPage'));
 
 function App() {
 	return (
@@ -34,6 +34,7 @@ function App() {
 							} />
 							<Route path="about" element={<About />} />
 							<Route path="contact" element={<Contact />} />
+							<Route path="roles" exact component={RolesPage} />
 						</Routes>
 					</Suspense>
 					<AppFooter />
