@@ -26,10 +26,10 @@ const UnderConstructionSplash = ({ onClose }) => {
           &times;
         </button>
         <h1 className="text-4xl mb-4 text-primary-dark dark:text-primary-light p-5 border-b border-ternary-light dark:border-ternary-dark">
-          Pardon our dust
+          Under Construction
         </h1>
         <p className="mb-6 p-5 text-primary-dark dark:text-primary-light">
-          We're working hard to bring updates to our website. Stay tuned!
+          Stay tuned for more updates!
         </p>
         <div className="flex justify-between items-end p-5 border-t border-ternary-light dark:border-ternary-dark">
           <button 
