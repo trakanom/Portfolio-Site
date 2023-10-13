@@ -6,7 +6,7 @@ const useThemeSwitcher = () => {
 
 	useEffect(() => {
 		const root = window.document.documentElement;
-
+		console.log('Theme toggled to:', activeTheme === 'dark' ? 'light' : 'dark'); // Log the toggled theme
 		root.classList.remove(activeTheme);
 		root.classList.add(theme);
 		localStorage.setItem('theme', theme);
