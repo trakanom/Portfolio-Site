@@ -21,8 +21,9 @@ function App() {
 	const [showSplash, setShowSplash] = useState(true);
 	return (
 		<div classname="App">
-			{showSplash && <UnderConstructionSplash onClose={() => setShowSplash(false)} />}
+			
 		<AnimatePresence>
+		
 			<div className=" bg-secondary-light dark:bg-primary-dark transition duration-300">
 				<Router>
 					<ScrollToTop />
@@ -44,6 +45,7 @@ function App() {
 				</Router>
 				<UseScrollToTop />
 			</div>
+			{showSplash && <UnderConstructionSplash onClose={() => setShowSplash(false)} />}
 		</AnimatePresence>
 		</div>
 	);
