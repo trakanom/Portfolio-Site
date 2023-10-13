@@ -5,6 +5,8 @@ const UnderConstructionSplash = ({ onClose }) => {
 
   const changelogData = [
     // Add your 5 latest changelog items here
+    { date: '2023-10-12', description: 'Smoothed splash animation' },
+    { date: '2023-10-11', description: 'Customize `About Me` content' },
     { date: '2023-10-09', description: 'Add `Under Construction` screen ' },
     { date: '2023-10-08', description: 'Website deployment' }
     // TODO: Automate latest github merge fetch
