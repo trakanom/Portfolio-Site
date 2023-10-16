@@ -13,7 +13,7 @@ export const aboutMeData = [
 	},
 	{
 		id: 4,
-		bio: `My journey also emphasized the value of a diverse skill set. From the logical rigor of mathematics to the unpredictable dynamics of gaming, I learned to harness these varied skills for practical applications. It's not just about knowing math or understanding a game; it's about leveraging that knowledge to solve real-world problems.`,
+		bio: `My journey also emphasized the value of a diverse skill set. From the logical rigor of mathematics to the complex dynamics of markets, I learned to harness these varied skills for practical applications. It's not just about knowing math or understanding a system; it's about leveraging that knowledge to solve real-world problems.`,
 	},
 	{
 		id: 5,
@@ -21,7 +21,7 @@ export const aboutMeData = [
 	},
 	{
 		id: 6,
-		bio: `As I reflect on my journey, the intersections of technology, gaming, and human connection stand out. These intersections aren't just about the projects I've undertaken but about the myriad opportunities they present for the future.`
+		bio: `As I reflect on my journey, the intersections of technology, strategy, and human connection stand out. These intersections aren't just about the projects I've undertaken but about the myriad of opportunities they present for the future.`
 	},
 	{
 		id: 7,

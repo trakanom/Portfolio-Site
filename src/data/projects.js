@@ -8,6 +8,10 @@ import BottingImage1 from '../images/projects/botting.png';
 import OptimizationImage1 from '../images/projects/optimization_consulting.png';
 import SecurityImage1 from '../images/projects/security_consulting3.png';
 import LifeImage1 from '../images/projects/life2.png';
+import SwarmImage1 from "../images/projects/9/infrastructure diagram.webp"
+import SwarmImage2 from "../images/projects/9/deployment_architecture.webp"
+import SwarmImage3 from "../images/projects/9/monitoring_dashboard.webp"
+
 // import LifeImage2 from '../images/projects/life_animation.mp4';
 // import UIImage1 from '../images/ui-project-1.jpg';
 // import UIImage2 from '../images/ui-project-2.jpg';
@@ -21,121 +25,7 @@ import Image6 from '../images/ui-project-2.jpg';
 
 
 export const projectsData = [
-	{
-		id: 1,
-		title: 'Personal Health Platform',
-		category: 'Analysis',
-		img: DentalImage2,
-		ProjectHeader: {
-			title: 'Project Management UI - From Context',
-			publishDate: 'Jul 26, 2021',
-			tags: 'UI / Frontend / Whatever you want',
-		},
-		ProjectImages: [
-			{
-				id: 1,
-				title: 'Kabul Project Management UI',
-				img: VideoImage1,
-			},
-			{
-				id: 2,
-				title: 'Kabul Project Management UI',
-				img: DentalImage1,
-			},
-			{
-				id: 3,
-				title: 'Kabul Project Management UI',
-				img: LifeImage1,
-			},
-		],
-		ProjectInfo: {
-			CompanyInfo: [
-				{
-					id: 1,
-					title: 'Name',
-					details: 'Company Ltd',
-				},
-				{
-					id: 2,
-					title: 'Services',
-					details: 'UI Design & Frontend Development',
-				},
-				{
-					id: 3,
-					title: 'Website',
-					details: 'https://company.com',
-				},
-				{
-					id: 4,
-					title: 'Phone',
-					details: '555 8888 888',
-				},
-			],
-			ObjectivesDetails:
-				'Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio, natus! Quibusdam enim quod in esse, mollitia molestias incidunt quas ipsa accusamus veniam.',
-			Technologies: [
-				{
-					techs: [
-						'HTML',
-						'CSS',
-						'JavaScript',
-						'Vue.js',
-						'TailwindCSS',
-						'AdobeXD',
-						'Pythonanom'
-					],
-				},
-			],
-			ProjectDetails: [
-				{
-					id: 1,
-					details:
-						'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nihil vel illum asperiores dignissimos cumque quibusdam et fugiat voluptatem nobis suscipit explicabo, eaque consequatur nesciunt, fugit eligendi corporis laudantium adipisci soluta? Lorem ipsum, dolor sit amet consectetur adipisicing elit. Incidunt totam dolorum, ducimus obcaecati, voluptas facilis molestias nobis ut quam natus similique inventore excepturi optio ipsa deleniti fugit illo. Unde, amet! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum illo necessitatibus perspiciatis! Aperiam perferendis labore temporibus, eos culpa corporis recusandae quas, fuga voluptatibus nesciunt odit libero tenetur neque consequatur ea.',
-				},
-				{
-					id: 2,
-					details:
-						'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nihil vel illum asperiores dignissimos cumque quibusdam et fugiat voluptatem nobis suscipit explicabo, eaque consequatur nesciunt, fugit eligendi corporis laudantium adipisci soluta?',
-				},
-				{
-					id: 3,
-					details:
-						'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nihil vel illum asperiores dignissimos cumque quibusdam et fugiat voluptatem nobis suscipit explicabo, eaque consequatur nesciunt, fugit eligendi corporis laudantium adipisci soluta?',
-				},
-				{
-					id: 4,
-					details:
-						'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nihil vel illum asperiores dignissimos cumque quibusdam et fugiat voluptatem nobis suscipit explicabo, eaque consequatur nesciunt, fugit eligendi corporis laudantium adipisci soluta? Lorem ipsum, dolor sit amet consectetur adipisicing elit. Incidunt totam dolorum, ducimus obcaecati, voluptas facilis molestias nobis ut quam natus similique inventore excepturi optio ipsa deleniti fugit illo. Unde, amet! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum illo necessitatibus perspiciatis! Aperiam perferendis labore temporibus, eos culpa corporis recusandae quas, fuga voluptatibus nesciunt odit libero tenetur neque consequatur ea.',
-				},
-			],
-		},
-		RelatedProject: {
-			title: 'Related Projects',
-			Projects: [
-				{
-					id: 1,
-					title: 'Mobile UI',
-					img: Image4,
-				},
-				{
-					id: 2,
-					title: 'Web Application',
-					img: Image5,
-				},
-				{
-					id: 3,
-					title: 'UI Design',
-					img: Image6,
-				},
-				{
-					id: 4,
-					title: 'Kabul Mobile App UI',
-					img: Image3,
-				},
-			],
-		},
-
-	},
+	
 	{
 		id: 2,
 		title: 'Video Library Compression',
@@ -248,7 +138,7 @@ export const projectsData = [
 	{
 		id: 4,
 		title: 'High-End MMORPG Automation',
-		category: 'Machine Learning',
+		category: 'Data Projects',
 		ProjectInfo: {
 			ProjectDetails: [
 				{
@@ -271,7 +161,7 @@ export const projectsData = [
 	{
 		id: 5,
 		title: 'Smart Contract Algorithm Redesign',
-		category: 'Smart Contract Development',
+		category: 'System Engineering',
 		ProjectInfo: {
 			ProjectDetails: [
 				{
@@ -360,4 +250,228 @@ export const projectsData = [
 			tags: 'Tools and Scripts, Data Management',
 		},
 	},
+	{
+		"id": 9,
+		"title": "Automated AI Model Training Infrastructure",
+		"category": "DevOps",
+		"img": SwarmImage1,
+		"ProjectHeader": {
+			"title": "Automated Infrastructure for AI Model Training and Deployment",
+			"publishDate": "Oct 15, 2023",
+			"tags": "DevOps / Terraform / Puppet / AI"
+		},
+		"ProjectImages": [
+			{
+				"id": 1,
+				"title": "Infrastructure Diagram",
+				"img": SwarmImage1
+			},
+			{
+				"id": 2,
+				"title": "Model Deployment Architecture",
+				"img": SwarmImage2
+			},
+			{
+				"id": 3,
+				"title": "Monitoring Dashboard",
+				"img": SwarmImage3
+			}
+		],
+		"ProjectInfo": {
+			"CompanyInfo": [
+				{
+					"id": 1,
+					"title": "Name",
+					"details": "MikaSoft"
+				},
+				{
+					"id": 2,
+					"title": "Services",
+					"details": "DevOps Engineering & AI Implementation"
+				},
+				{
+					"id": 3,
+					"title": "Website",
+					"details": "https://mikasoft.xyz"
+				},
+				{
+					"id": 4,
+					"title": "Phone",
+					"details": "+1 559-349-7545"
+				}
+			],
+			"ObjectivesDetails": "The project aims to automate the infrastructure setup for training and deploying AI models, utilizing Terraform for infrastructure as code and Puppet for configuration management. This enables scalable and manageable AI model training and deployment, adhering to DevOps best practices.",
+			"Technologies": [
+				{
+					"techs": [
+						"Terraform",
+						"Puppet",
+						"Python",
+						"Docker",
+						"ELK Stack",
+						"Cloud Platform (e.g., AWS, GCP, Azure)"
+					]
+				}
+			],
+			"ProjectDetails": [
+				{
+					"id": 1,
+					"details": "The project initiated with the setup of infrastructure using Terraform, defining and provisioning resources like VMs, networking, and storage on a chosen cloud platform. This phase ensured the scalable and efficient setup of resources required for model training and deployment."
+				},
+				{
+					"id": 2,
+					"details": "Puppet was utilized for configuration management, ensuring all VMs were consistently configured with the necessary software and security settings. This phase ensured that the systems were secure and had the necessary dependencies for model training and deployment."
+				},
+				{
+					"id": 3,
+					"details": "The model training and deployment phase involved creating a system to ingest and preprocess data, train AI models, and deploy them as API endpoints. This phase ensured that the AI models could be trained and updated efficiently and served to end-users with minimal latency."
+				},
+				{
+					"id": 4,
+					"details": "Monitoring and logging were implemented using the ELK Stack, ensuring system health and activities could be monitored in real-time. This phase ensured that any issues could be identified and resolved promptly, and system usage could be analyzed for further optimization."
+				}
+			]
+		},
+		"RelatedProject": {
+			"title": "Related Projects",
+			"Projects": [
+				{
+					"id": 1,
+					"title": "Personal Health Platform",
+					"img": "DentalImage2"
+				},
+				{
+					"id": 2,
+					"title": "Professional Intelligence System",
+					"img": "YourRelatedProjectImageLinkHere"
+				},
+				{
+					"id": 3,
+					"title": "Automated Financial Data Integration Tool",
+					"img": "YourRelatedProjectImageLinkHere"
+				},
+				{
+					"id": 4,
+					"title": "Maker Homelab Ecosystem",
+					"img": "YourRelatedProjectImageLinkHere"
+				}
+			]
+		}
+	},
+	{
+		id: 10,
+		title: 'Personal Health Platform',
+		category: 'DevOps',
+		img: DentalImage2,
+		ProjectHeader: {
+			title: 'Project Management UI - From Context',
+			publishDate: 'Jul 26, 2021',
+			tags: 'UI / Frontend / Whatever you want',
+		},
+		ProjectImages: [
+			{
+				id: 1,
+				title: 'Kabul Project Management UI',
+				img: VideoImage1,
+			},
+			{
+				id: 2,
+				title: 'Kabul Project Management UI',
+				img: DentalImage1,
+			},
+			{
+				id: 3,
+				title: 'Kabul Project Management UI',
+				img: LifeImage1,
+			},
+		],
+		ProjectInfo: {
+			CompanyInfo: [
+				{
+					id: 1,
+					title: 'Name',
+					details: 'Company Ltd',
+				},
+				{
+					id: 2,
+					title: 'Services',
+					details: 'UI Design & Frontend Development',
+				},
+				{
+					id: 3,
+					title: 'Website',
+					details: 'https://company.com',
+				},
+				{
+					id: 4,
+					title: 'Phone',
+					details: '555 8888 888',
+				},
+			],
+			ObjectivesDetails:
+				'Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio, natus! Quibusdam enim quod in esse, mollitia molestias incidunt quas ipsa accusamus veniam.',
+			Technologies: [
+				{
+					techs: [
+						'HTML',
+						'CSS',
+						'JavaScript',
+						'Vue.js',
+						'TailwindCSS',
+						'AdobeXD',
+						'Pythonanom'
+					],
+				},
+			],
+			ProjectDetails: [
+				{
+					id: 1,
+					details:
+						'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nihil vel illum asperiores dignissimos cumque quibusdam et fugiat voluptatem nobis suscipit explicabo, eaque consequatur nesciunt, fugit eligendi corporis laudantium adipisci soluta? Lorem ipsum, dolor sit amet consectetur adipisicing elit. Incidunt totam dolorum, ducimus obcaecati, voluptas facilis molestias nobis ut quam natus similique inventore excepturi optio ipsa deleniti fugit illo. Unde, amet! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum illo necessitatibus perspiciatis! Aperiam perferendis labore temporibus, eos culpa corporis recusandae quas, fuga voluptatibus nesciunt odit libero tenetur neque consequatur ea.',
+				},
+				{
+					id: 2,
+					details:
+						'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nihil vel illum asperiores dignissimos cumque quibusdam et fugiat voluptatem nobis suscipit explicabo, eaque consequatur nesciunt, fugit eligendi corporis laudantium adipisci soluta?',
+				},
+				{
+					id: 3,
+					details:
+						'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nihil vel illum asperiores dignissimos cumque quibusdam et fugiat voluptatem nobis suscipit explicabo, eaque consequatur nesciunt, fugit eligendi corporis laudantium adipisci soluta?',
+				},
+				{
+					id: 4,
+					details:
+						'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nihil vel illum asperiores dignissimos cumque quibusdam et fugiat voluptatem nobis suscipit explicabo, eaque consequatur nesciunt, fugit eligendi corporis laudantium adipisci soluta? Lorem ipsum, dolor sit amet consectetur adipisicing elit. Incidunt totam dolorum, ducimus obcaecati, voluptas facilis molestias nobis ut quam natus similique inventore excepturi optio ipsa deleniti fugit illo. Unde, amet! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum illo necessitatibus perspiciatis! Aperiam perferendis labore temporibus, eos culpa corporis recusandae quas, fuga voluptatibus nesciunt odit libero tenetur neque consequatur ea.',
+				},
+			],
+		},
+		RelatedProject: {
+			title: 'Related Projects',
+			Projects: [
+				{
+					id: 1,
+					title: 'Mobile UI',
+					img: Image4,
+				},
+				{
+					id: 2,
+					title: 'Web Application',
+					img: Image5,
+				},
+				{
+					id: 3,
+					title: 'UI Design',
+					img: Image6,
+				},
+				{
+					id: 4,
+					title: 'Kabul Mobile App UI',
+					img: Image3,
+				},
+			],
+		},
+
+	},
+	
 ]
