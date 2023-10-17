@@ -1,4 +1,4 @@
-import React, { Suspense, useState, useEffect} from 'react';
+import React, { Suspense, useState} from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { AnimatePresence } from 'framer-motion';
 import ScrollToTop from './components/ScrollToTop';
@@ -22,37 +22,7 @@ const ProjectSingle = React.lazy(() => import('./pages/ProjectSingle'));
 
 function App() {
 	const [showSplash, setShowSplash] = useState(true);
-    // const [showConsentBanner, setShowConsentBanner] = useState(false);
-	// const [showConsentBanner, setShowConsentBanner] = useState(true);
 	const { showConsentBanner, handleAccept, handleDecline } = useAnalyticsConsent();
-	// useEffect(() => {
-	// 	const consentGiven = localStorage.getItem('ga-consent-given');
-	// 	console.log("Consent given (useEffect):", consentGiven);
-	// 	if (consentGiven === null) {
-	// 		setShowConsentBanner(true);
-	// 	}
-	// }, []);
-	
-
-    // const handleAccept = () => {
-    //     localStorage.setItem('ga-consent-given', 'true');
-	// 	console.log("Consent given:", localStorage.getItem('ga-consent-given'));
-    //     setShowConsentBanner(false);
-    //     window.gtag('consent', 'update', {
-    //         'ad_storage': 'granted',
-    //         'analytics_storage': 'granted'
-    //     });
-    // };
-
-    // const handleDecline = () => {
-    //     localStorage.setItem('ga-consent-given', 'false');
-	// 			console.log("Consent given:", localStorage.getItem('ga-consent-given'));
-    //     setShowConsentBanner(false);
-    //     window.gtag('consent', 'update', {
-    //         'ad_storage': 'denied',
-    //         'analytics_storage': 'denied'
-    //     });
-    // };
 	return (
 		<div classname="App">
 		<AnimatePresence>
