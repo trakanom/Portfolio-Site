@@ -14,7 +14,7 @@ const UnderConstructionSplash = ({ onClose }) => {
   return (
     <div 
         onClick={handleClickOutside} 
-        className="outside fixed inset-0 bg-filter bg-secondary-light dark:bg-secondary-dark  bg-opacity-50 flex items-center justify-center z-50">
+        className="outside fixed inset-0 bg-filter bg-secondary-light bg-opacity-50 flex items-center justify-center z-50">
       <div className="bg-primary-light dark:bg-primary-dark shadow-lg flex-row rounded-lg relative max-w-md mx-5 xl:max-w-xl lg:max-w-xl md:max-w-xl max-h-screen">
         <button onClick={onClose} className="px-4 font-bold text-primary-dark dark:text-primary-light absolute top-4 right-4">
           &times;
