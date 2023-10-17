@@ -1,5 +1,6 @@
 const changelogData = [
     // Add your 5 latest changelog items here
+    { date: '2023-10-17', description: 'Add resume' },
     { date: '2023-10-16', description: 'Add analytics' },
     { date: '2023-10-15', description: 'Add personalized branding' },
     { date: '2023-10-13', description: 'National Holiday - update dark mode' },
