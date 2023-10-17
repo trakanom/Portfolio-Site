@@ -1,8 +1,11 @@
 import React, { useState } from 'react';
+import changelogData from '../data/changelogData';
+
 
 const UnderConstructionSplash = ({ onClose }) => {
   const [showChangelog, setShowChangelog] = useState(false);
 
+<<<<<<< Updated upstream
   const changelogData = [
     // Add your 5 latest changelog items here
     { date: '2023-10-16', description: 'Add personalized branding' },
@@ -14,8 +17,10 @@ const UnderConstructionSplash = ({ onClose }) => {
     // TODO: Automate latest github merge fetch
   ];
 
+=======
+>>>>>>> Stashed changes
   const handleClickOutside = (e) => {
-    if (e.target.className.includes('outside')) {
+    if (e.target.className && e.target.className.includes('outside')) {
       onClose();
     }
   };
