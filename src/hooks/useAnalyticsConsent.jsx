@@ -8,8 +8,19 @@ function useAnalyticsConsent() {
 		const consentGiven = localStorage.getItem('ga-consent-given');
 		console.log("Consent given (useEffect):", consentGiven);
 		if (consentGiven === null) {
+            // User hasn't made a choice yet, so we assume consent is given
+            window.gtag('consent', 'update', {
+                'ad_storage': 'granted',
+                'analytics_storage': 'granted'
+            });
 			setShowConsentBanner(true);
-		}
+        } else if (consentGiven === 'false') {
+            // User has explicitly declined analytics
+            window.gtag('consent', 'update', {
+                'ad_storage': 'denied',
+                'analytics_storage': 'denied'
+            });
+        }
 	}, []);
 	
 
