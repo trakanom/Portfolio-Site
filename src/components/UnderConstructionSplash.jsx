@@ -5,20 +5,6 @@ import changelogData from '../data/changelogData';
 const UnderConstructionSplash = ({ onClose }) => {
   const [showChangelog, setShowChangelog] = useState(false);
 
-<<<<<<< Updated upstream
-  const changelogData = [
-    // Add your 5 latest changelog items here
-    { date: '2023-10-16', description: 'Add personalized branding' },
-    { date: '2023-10-13', description: 'National Holiday - update dark mode' },
-    { date: '2023-10-12', description: 'Smoothed splash animation, Add scheduling functionality' },
-    { date: '2023-10-11', description: 'Customize `About Me` content' },
-    { date: '2023-10-09', description: 'Add `Under Construction` screen ' },
-    { date: '2023-10-08', description: 'Website deployment' }
-    // TODO: Automate latest github merge fetch
-  ];
-
-=======
->>>>>>> Stashed changes
   const handleClickOutside = (e) => {
     if (e.target.className && e.target.className.includes('outside')) {
       onClose();
