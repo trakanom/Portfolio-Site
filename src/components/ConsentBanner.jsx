@@ -1,15 +1,33 @@
-// src/components/ConsentBanner.js
+import React from 'react';
 
 function ConsentBanner({ onAccept, onDecline }) {
-    return (
-        <div className="fixed bottom-0 left-0 right-0 bg-gray-800 text-white p-4 flex justify-between items-center">
-            <p>We use cookies to analyze website traffic. Do you consent to our use of cookies for this purpose?</p>
-            <div>
-                <button onClick={onAccept} className="mr-2 px-4 py-2 bg-green-500 hover:bg-green-600">Accept</button>
-                <button onClick={onDecline} className="px-4 py-2 bg-red-500 hover:bg-red-600">Decline</button>
-            </div>
-        </div>
-    );
+  return (
+    <div style={styles.banner}>
+      <p>We use cookies to analyze website traffic. Do you consent to our use of cookies for this purpose?</p>
+      <button onClick={onAccept} style={styles.button}>Accept</button>
+      <button onClick={onDecline} style={styles.button}>Decline</button>
+    </div>
+  );
 }
+//TODO: update styles to match site
+const styles = {
+  banner: {
+    position: 'fixed',
+    bottom: 0,
+    left: 0,
+    right: 0,
+    backgroundColor: '#333',
+    color: '#fff',
+    padding: '1em',
+    display: 'flex',
+    justifyContent: 'Center',
+    alignItems: 'Center',
+  },
+  button: {
+    margin: '0 1em',
+    padding: '0.5em 1em',
+    cursor: 'pointer',
+  }
+};
 
 export default ConsentBanner;
