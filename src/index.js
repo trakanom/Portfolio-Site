@@ -6,7 +6,14 @@ import { createRoot } from 'react-dom/client';
 
 // Initialize GTM
 const tagManagerArgs = {
-    gtmId: 'G-X3BC78Y4MZ'
+    gtmId: 'G-X3BC78Y4MZ',
+    dataLayer: {
+        'gtag.config': {
+            'G-X3BC78Y4MZ': {
+                'consent': 'default'
+            }
+        }
+    }
 };
 TagManager.initialize(tagManagerArgs);
 
