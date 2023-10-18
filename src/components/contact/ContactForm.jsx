@@ -1,17 +1,42 @@
+import React, { useState } from 'react';
 import Button from '../reusable/Button';
 import FormInput from '../reusable/FormInput';
+import ThankYouModal from '../ThankYouModal';
 
 const ContactForm = () => {
-	return (
-		<div className="w-full lg:w-1/2">
-			<div className="leading-loose">
-				<form
-					name="contact"
-					onSubmit={(e) => {
-						e.preventDefault();
-					}}
-					className="max-w-xl m-4 p-6 sm:p-10 bg-secondary-light dark:bg-secondary-dark rounded-xl shadow-xl text-left"
-				>
+    const [isModalOpen, setIsModalOpen] = useState(false);
+    const [formData, setFormData] = useState({
+        name: '',
+        email: '',
+        subject: '',
+        message: ''
+    });
+    const [error] = useState(null);
+
+    const handleInputChange = (e) => {
+        const { name, value } = e.target;
+        setFormData(prevState => ({ ...prevState, [name]: value }));
+    };
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        // Here, you can handle the form submission logic.
+        // For demonstration purposes, we'll just open the Thank You modal.
+        // In a real-world scenario, you'd send the formData to a server.
+        setIsModalOpen(true);
+    };
+
+    return (
+        <div className="w-full lg:w-1/2">
+            <div className="leading-loose">
+                <form
+                    name="contact"
+                    method="POST"
+                    data-netlify="true"
+                    onSubmit={handleSubmit}
+                    className="max-w-xl m-4 p-6 sm:p-10 bg-secondary-light dark:bg-secondary-dark rounded-xl shadow-xl text-left"
+                >
+                    {error && <p className="text-red-500">{error}</p>}
 					<p className="font-general-medium text-primary-dark dark:text-primary-light text-2xl mb-8">
 						Contact Form
 					</p>
@@ -52,6 +77,8 @@ const ContactForm = () => {
 							Message
 						</label>
 						<textarea
+							onChange={handleInputChange}
+							value={formData.message}
 							className="w-full px-5 py-2 border border-gray-300 dark:border-primary-dark border-opacity-50 text-primary-dark dark:text-secondary-light bg-ternary-light dark:bg-ternary-dark rounded-md shadow-sm text-md"
 							id="message"
 							name="message"
@@ -69,6 +96,7 @@ const ContactForm = () => {
 						/>
 					</div>
 				</form>
+				<ThankYouModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
 			</div>
 		</div>
 	);
