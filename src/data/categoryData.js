@@ -3,20 +3,17 @@ export const selectOptions = [
     // 'Mobile Application',
     // 'UI/UX Design',
     // 'Branding',
-    'Optimization',
+    'DevOps',
     'Tools and Scripts',
     'Data Projects',
     'IT',
-    'Engineering',
-    'Management',
+    'System Engineering',
     'Analysis',
+    'Management',
     'Algorithm Design',
     'Automation',
     'Game Development',
-    'Smart Contract Development',
-    'Data Management',
     'Machine Learning',
-
 ];
 
 export default selectOptions;

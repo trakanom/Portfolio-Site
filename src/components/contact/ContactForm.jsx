@@ -6,6 +6,7 @@ const ContactForm = () => {
 		<div className="w-full lg:w-1/2">
 			<div className="leading-loose">
 				<form
+					name="contact"
 					onSubmit={(e) => {
 						e.preventDefault();
 					}}
@@ -41,6 +42,7 @@ const ContactForm = () => {
 						placeholderText="Subject"
 						ariaLabelName="Subject"
 					/>
+					<input type="hidden" name="form-name" value="contact" />
 
 					<div className="mt-6">
 						<label
