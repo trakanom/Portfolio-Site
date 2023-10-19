@@ -1,19 +1,19 @@
-import { FiPhone, FiMapPin, FiMail } from 'react-icons/fi';
+import { FiPhone, FiMapPin, FiMail } from "react-icons/fi";
 
 const contacts = [
 	{
 		id: 1,
-		name: 'California, USA',
+		name: "California, USA",
 		icon: <FiMapPin />,
 	},
 	{
 		id: 2,
-		name: 'Mika@Wisener.dev',
+		name: "Mika@Wisener.dev",
 		icon: <FiMail />,
 	},
 	{
 		id: 3,
-		name: '(805) 321-8581',
+		name: "(805) 321-8581",
 		icon: <FiPhone />,
 	},
 ];
@@ -31,7 +31,7 @@ const ContactDetails = () => {
 							<i className="text-2xl text-gray-500 dark:text-gray-400 mr-4">
 								{contact.icon}
 							</i>
-							<span className="text-lg mb-4 text-ternary-dark dark:text-ternary-light">
+							<span className="text-lg mb-4 text-tertiary-dark dark:text-tertiary-light">
 								{contact.name}
 							</span>
 						</li>
