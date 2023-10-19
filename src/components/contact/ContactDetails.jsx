@@ -1,19 +1,19 @@
-import { FiPhone, FiMapPin, FiMail } from 'react-icons/fi';
+import { FiPhone, FiMapPin, FiMail } from "react-icons/fi";
 
 const contacts = [
 	{
 		id: 1,
-		name: 'California, USA',
+		name: "California, USA",
 		icon: <FiMapPin />,
 	},
 	{
 		id: 2,
-		name: 'Mika@Wisener.dev',
+		name: "Mika@Wisener.dev",
 		icon: <FiMail />,
 	},
 	{
 		id: 3,
-		name: '(805) 321-8581',
+		name: "(805) 321-8581",
 		icon: <FiPhone />,
 	},
 ];
