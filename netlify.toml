@@ -1,4 +1,4 @@
 [build]
   functions = "netlify/functions"
-  command = "yarn build:css && react-scripts --openssl-legacy-provider build"
+  command = "react-scripts --openssl-legacy-provider build"
   environment = { NODE_VERSION = "18.15.0" }
