@@ -50,6 +50,8 @@ const ContactForm = () => {
 			email: formData.get("email"),
 			message: formData.get("message"),
 		};
+		// Log the form values for testing
+		console.log("Form Values:", formValues);
 
 		try {
 			// Validate form data against schema
