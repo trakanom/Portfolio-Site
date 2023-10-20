@@ -1,6 +1,6 @@
-import React from 'react';
-import { FiClock, FiTag } from 'react-icons/fi';
-import { useSingleProject } from '../../context/SingleProjectContext';
+import React from "react";
+import { FiClock, FiTag } from "react-icons/fi";
+import { useSingleProject } from "../../context/SingleProjectContext";
 
 function ProjectSingleHeader({ data }) {
 	const { projectData, error } = useSingleProject();
@@ -38,6 +38,6 @@ function ProjectSingleHeader({ data }) {
 			</div>
 		</div>
 	);
-};
+}
 
 export default ProjectSingleHeader;

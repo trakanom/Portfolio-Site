@@ -1,11 +1,11 @@
-import { useCountUp } from 'react-countup';
-import CounterItem from './CounterItem';
+import { useCountUp } from "react-countup";
+import CounterItem from "./CounterItem";
 
 const AboutCounter = () => {
-	useCountUp({ ref: 'experienceCounter', end: 17, duration: 3 });
-	useCountUp({ ref: 'githubStarsCounter', end: 1, duration: 5 });
-	useCountUp({ ref: 'feedbackCounter', end: 92, duration: 2 });
-	useCountUp({ ref: 'projectsCounter', end: 100, duration: 3 });
+	useCountUp({ ref: "experienceCounter", end: 17, duration: 3 });
+	useCountUp({ ref: "githubStarsCounter", end: 1, duration: 5 });
+	useCountUp({ ref: "feedbackCounter", end: 92, duration: 2 });
+	useCountUp({ ref: "projectsCounter", end: 100, duration: 3 });
 
 	return (
 		<div className="mt-10 sm:mt-20 bg-primary-light dark:bg-ternary-dark shadow-sm">

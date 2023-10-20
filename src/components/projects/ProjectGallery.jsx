@@ -1,5 +1,5 @@
-import React from 'react';
-import { useSingleProject } from '../../context/SingleProjectContext';
+import React from "react";
+import { useSingleProject } from "../../context/SingleProjectContext";
 
 const ProjectGallery = () => {
 	const { projectData, error } = useSingleProject();

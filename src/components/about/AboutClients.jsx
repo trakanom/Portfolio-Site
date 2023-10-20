@@ -1,6 +1,6 @@
-import { useContext } from 'react';
-import AboutMeContext from '../../context/AboutMeContext';
-import AboutClientSingle from './AboutClientSingle';
+import { useContext } from "react";
+import AboutMeContext from "../../context/AboutMeContext";
+import AboutClientSingle from "./AboutClientSingle";
 
 const AboutClients = () => {
 	const { clientsData, clientsHeading } = useContext(AboutMeContext);

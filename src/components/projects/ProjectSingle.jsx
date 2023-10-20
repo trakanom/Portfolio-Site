@@ -1,5 +1,5 @@
-import { motion } from 'framer-motion';
-import { Link } from 'react-router-dom';
+import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 const ProjectSingle = ({ id, title, category, image }) => {
 	return (
@@ -7,7 +7,7 @@ const ProjectSingle = ({ id, title, category, image }) => {
 			initial={{ opacity: 0 }}
 			animate={{ opacity: 1, delay: 1 }}
 			transition={{
-				ease: 'easeInOut',
+				ease: "easeInOut",
 				duration: 0.7,
 				delay: 0.15,
 			}}
@@ -36,4 +36,3 @@ const ProjectSingle = ({ id, title, category, image }) => {
 };
 
 export default ProjectSingle;
-

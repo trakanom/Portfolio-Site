@@ -1,15 +1,17 @@
-import React, { createContext, useContext, useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
-import { projectsData } from '../data/projects';
+import React, { createContext, useContext, useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
+import { projectsData } from "../data/projects";
 // eslint-disable-next-line
-import { singleProjectData } from '../data/projects';
+import { singleProjectData } from "../data/projects";
 
 export const SingleProjectContext = createContext();
 
 export const useSingleProject = () => {
 	const context = useContext(SingleProjectContext);
 	if (!context) {
-		throw new Error('useSingleProject must be used within a SingleProjectProvider');
+		throw new Error(
+			"useSingleProject must be used within a SingleProjectProvider"
+		);
 	}
 	return context;
 };
@@ -24,16 +26,16 @@ export const SingleProjectProvider = ({ children }) => {
 
 	useEffect(() => {
 		console.log("Project ID from URL:", projectId);
-	
+
 		// Check if projectId is a number
 		if (isNaN(numericProjectId)) {
 			setError(true);
 			return;
 		}
-	
-		const project = projectsData.find(p => p.id === numericProjectId);
+
+		const project = projectsData.find((p) => p.id === numericProjectId);
 		console.log("Found Project Data:", project);
-	
+
 		if (!project) {
 			setError(true);
 			return;
@@ -52,4 +54,3 @@ export const SingleProjectProvider = ({ children }) => {
 		</SingleProjectContext.Provider>
 	);
 };
-

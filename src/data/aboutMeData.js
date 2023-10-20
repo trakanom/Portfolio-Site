@@ -21,12 +21,10 @@ export const aboutMeData = [
 	},
 	{
 		id: 6,
-		bio: `As I reflect on my journey, the intersections of technology, strategy, and human connection stand out. These intersections aren't just about the projects I've undertaken but about the myriad of opportunities they present for the future.`
+		bio: `As I reflect on my journey, the intersections of technology, strategy, and human connection stand out. These intersections aren't just about the projects I've undertaken but about the myriad of opportunities they present for the future.`,
 	},
 	{
 		id: 7,
-		bio: `If you're on the hunt for technical expertise, data-driven optimization, or tailored strategic solutions, consider me a match. Whether you're aiming for collaboration, in need of a skilled project partner, or just open to a meaningful conversation, I'm here and ready to deliver value. Let's connect!`
-	}
-	
-	
+		bio: `If you're on the hunt for technical expertise, data-driven optimization, or tailored strategic solutions, consider me a match. Whether you're aiming for collaboration, in need of a skilled project partner, or just open to a meaningful conversation, I'm here and ready to deliver value. Let's connect!`,
+	},
 ];

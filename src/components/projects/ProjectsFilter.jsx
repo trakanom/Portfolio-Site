@@ -12,7 +12,7 @@
 // 	'Analysis',
 
 // ];
-import selectOptions from '../../data/categoryData'
+import selectOptions from "../../data/categoryData";
 
 const ProjectsFilter = ({ setSelectProject }) => {
 	return (

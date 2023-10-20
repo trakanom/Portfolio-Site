@@ -1,6 +1,6 @@
-import { motion } from 'framer-motion';
-import ContactDetails from '../components/contact/ContactDetails';
-import ContactForm from '../components/contact/ContactForm';
+import { motion } from "framer-motion";
+import ContactDetails from "../components/contact/ContactDetails";
+import ContactForm from "../components/contact/ContactForm";
 
 const Contact = () => {
 	return (
@@ -8,7 +8,7 @@ const Contact = () => {
 			initial={{ opacity: 0 }}
 			animate={{ opacity: 1 }}
 			transition={{
-				ease: 'easeInOut',
+				ease: "easeInOut",
 				duration: 0.5,
 				delay: 0.1,
 			}}

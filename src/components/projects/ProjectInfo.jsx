@@ -1,7 +1,7 @@
-import React from 'react';
-import { useSingleProject } from '../../context/SingleProjectContext';
-import ProjectSocials from './ProjectSocials';
-import HeaderInfo from '../../data/defaultsData'
+import React from "react";
+import { useSingleProject } from "../../context/SingleProjectContext";
+import ProjectSocials from "./ProjectSocials";
+import HeaderInfo from "../../data/defaultsData";
 const ProjectInfo = () => {
 	const { projectData, error } = useSingleProject();
 
@@ -14,7 +14,7 @@ const ProjectInfo = () => {
 	}
 
 	const { ProjectInfo } = projectData;
-	console.log("MY INFO!", ProjectInfo)
+	console.log("MY INFO!", ProjectInfo);
 	// Check for the presence of information before rendering
 	const hasCompanyInfo = ProjectInfo?.CompanyInfo?.length > 0;
 	const hasTechnologies = ProjectInfo?.Technologies?.[0]?.techs?.length > 0;
@@ -28,13 +28,26 @@ const ProjectInfo = () => {
 				{hasCompanyInfo && (
 					<div className="mb-7">
 						<p className="font-general-regular text-2xl font-semibold text-secondary-dark dark:text-secondary-light mb-2">
-							{ProjectInfo.ClientHeading || HeaderInfo.ClientHeading}
+							{ProjectInfo.ClientHeading ||
+								HeaderInfo.ClientHeading}
 						</p>
 						<ul className="leading-loose">
-							{ProjectInfo.CompanyInfo.map(info => (
-								<li className="font-general-regular text-ternary-dark dark:text-ternary-light" key={info.id}>
+							{ProjectInfo.CompanyInfo.map((info) => (
+								<li
+									className="font-general-regular text-ternary-dark dark:text-ternary-light"
+									key={info.id}
+								>
 									<span>{info.title}: </span>
-									<a href={info.details} className={info.title === 'Website' || info.title === 'Phone' ? 'hover:underline hover:text-indigo-500 dark:hover:text-indigo-400 cursor-pointer duration-300' : ''} aria-label="Project Contact Details">
+									<a
+										href={info.details}
+										className={
+											info.title === "Website" ||
+											info.title === "Phone"
+												? "hover:underline hover:text-indigo-500 dark:hover:text-indigo-400 cursor-pointer duration-300"
+												: ""
+										}
+										aria-label="Project Contact Details"
+									>
 										{info.details}
 									</a>
 								</li>
@@ -47,7 +60,8 @@ const ProjectInfo = () => {
 				{hasObjectives && (
 					<div className="mb-7">
 						<p className="font-general-regular text-2xl font-semibold text-ternary-dark dark:text-ternary-light mb-2">
-							{ProjectInfo.ObjectivesHeading || HeaderInfo.ObjectivesHeading}
+							{ProjectInfo.ObjectivesHeading ||
+								HeaderInfo.ObjectivesHeading}
 						</p>
 						<p className="font-general-regular text-primary-dark dark:text-ternary-light">
 							{ProjectInfo.ObjectivesDetails}
@@ -59,10 +73,11 @@ const ProjectInfo = () => {
 				{hasTechnologies && (
 					<div className="mb-7">
 						<p className="font-general-regular text-2xl font-semibold text-ternary-dark dark:text-ternary-light mb-2">
-							{ProjectInfo.Technologies[0].title || HeaderInfo.TechnologyHeader}
+							{ProjectInfo.Technologies[0].title ||
+								HeaderInfo.TechnologyHeader}
 						</p>
 						<p className="font-general-regular text-primary-dark dark:text-ternary-light">
-							{ProjectInfo.Technologies[0].techs.join(', ')}
+							{ProjectInfo.Technologies[0].techs.join(", ")}
 						</p>
 					</div>
 				)}
@@ -74,15 +89,15 @@ const ProjectInfo = () => {
 						</p>
 						<ProjectSocials projectId={projectData.id} />
 					</div>
-				)
-				}
+				)}
 			</div>
 
 			{/*  Single project right section */}
 			{hasProjectDetails && (
 				<div className="w-full sm:w-2/3 text-left mt-10 sm:mt-0">
 					<p className="font-general-regular text-primary-dark dark:text-primary-light text-2xl font-bold mb-7">
-						{ProjectInfo.ProjectDetailsHeading || HeaderInfo.ProjectDetailsHeading}
+						{ProjectInfo.ProjectDetailsHeading ||
+							HeaderInfo.ProjectDetailsHeading}
 					</p>
 					{ProjectInfo.ProjectDetails.map((details) => {
 						return (

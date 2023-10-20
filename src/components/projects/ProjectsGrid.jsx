@@ -1,10 +1,10 @@
-import { useContext } from 'react';
-import { FiSearch } from 'react-icons/fi';
-import ProjectSingle from './ProjectSingle';
-import { ProjectsContext } from '../../context/ProjectsContext';
-import ProjectsFilter from './ProjectsFilter';
+import { useContext } from "react";
+import { FiSearch } from "react-icons/fi";
+import ProjectSingle from "./ProjectSingle";
+import { ProjectsContext } from "../../context/ProjectsContext";
+import ProjectsFilter from "./ProjectsFilter";
 // eslint-disable-next-line
-import ProjectPreview from './ProjectPreview';
+import ProjectPreview from "./ProjectPreview";
 
 const ProjectsGrid = () => {
 	const {
@@ -98,16 +98,16 @@ const ProjectsGrid = () => {
 			<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 mt-6 sm:gap-10">
 				{selectProject
 					? selectProjectsByCategory.map((project) => (
-						<ProjectSingle
-							key={project.id}
-							id={project.id}
-							title={project.title}
-							category={project.category}
-							image={project.img}
-						/>
-					))
+							<ProjectSingle
+								key={project.id}
+								id={project.id}
+								title={project.title}
+								category={project.category}
+								image={project.img}
+							/>
+					  ))
 					: searchProject
-						? searchProjectsByTitle.map((project) => (
+					? searchProjectsByTitle.map((project) => (
 							<ProjectSingle
 								key={project.id}
 								id={project.id}
@@ -115,8 +115,8 @@ const ProjectsGrid = () => {
 								category={project.category}
 								image={project.img}
 							/>
-						))
-						: projects.map((project) => (
+					  ))
+					: projects.map((project) => (
 							<ProjectSingle
 								key={project.id}
 								id={project.id}
@@ -124,7 +124,7 @@ const ProjectsGrid = () => {
 								category={project.category}
 								image={project.img}
 							/>
-						))}
+					  ))}
 			</div>
 			{/* Project Preview */}
 			{/* <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 mt-6 sm:gap-10">
@@ -144,4 +144,4 @@ const ProjectsGrid = () => {
 	);
 };
 
-export default ProjectsGrid; 
+export default ProjectsGrid;

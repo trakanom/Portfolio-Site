@@ -1,5 +1,5 @@
-import { useState, createContext } from 'react';
-import { projectsData } from '../data/projects';
+import { useState, createContext } from "react";
+import { projectsData } from "../data/projects";
 
 // Create projects context
 export const ProjectsContext = createContext();
@@ -7,8 +7,8 @@ export const ProjectsContext = createContext();
 // Create the projects context provider
 export const ProjectsProvider = (props) => {
 	const [projects, setProjects] = useState(projectsData);
-	const [searchProject, setSearchProject] = useState('');
-	const [selectProject, setSelectProject] = useState('');
+	const [searchProject, setSearchProject] = useState("");
+	const [selectProject, setSelectProject] = useState("");
 
 	// Search projects by project title
 	const searchProjectsByTitle = projects.filter((item) => {
@@ -16,9 +16,9 @@ export const ProjectsProvider = (props) => {
 			.toLowerCase()
 			.includes(searchProject.toLowerCase())
 			? item
-			: searchProject === ''
+			: searchProject === ""
 			? item
-			: '';
+			: "";
 		return result;
 	});
 
