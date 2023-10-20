@@ -1,131 +1,103 @@
-//src/components/contact/ContactForm.jsx
-import React, { useState, useEffect } from "react";
-import * as yup from "yup";
-import ReCAPTCHA from "react-google-recaptcha";
-import ThankYouModal from "../ThankYouModal";
-import contactFormSchema from "../../../src/utils/validationSchemas";
+import React, { useState } from 'react';
+import Button from '../reusable/Button';
+import FormInput from '../reusable/FormInput';
+import ThankYouModal from '../ThankYouModal';
 
 const ContactForm = () => {
-	const [isModalOpen, setIsModalOpen] = useState(false);
-	const [formHtml, setFormHtml] = useState("");
-	const [loading, setLoading] = useState(false);
-	const [errors, setErrors] = useState({});
-	const validationSchema = contactFormSchema;
-	const [captchaValue, setCaptchaValue] = useState(null);
+    const [isModalOpen, setIsModalOpen] = useState(false);
+    const [formData, setFormData] = useState({
+        name: '',
+        email: '',
+        subject: '',
+        message: ''
+    });
+    const [error] = useState(null);
 
-	useEffect(() => {
-		fetch("/contact_form.html")
-			.then((response) => response.text())
-			.then((data) => {
-				setFormHtml(data);
-			});
-	}, []);
+    const handleInputChange = (e) => {
+        const { name, value } = e.target;
+        setFormData(prevState => ({ ...prevState, [name]: value }));
+    };
 
-	const handleSubmit = async (e) => {
-		// Prevent the default form submission behavior
-		e.preventDefault();
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        // Here, you can handle the form submission logic.
+        // For demonstration purposes, we'll just open the Thank You modal.
+        // In a real-world scenario, you'd send the formData to a server.
+        setIsModalOpen(true);
+    };
 
-		// Set the loading state to true to indicate the form is being processed
-		setLoading(true);
-
-		// Check if the reCAPTCHA has been filled out
-		if (!captchaValue) {
-			// If not, set an error for the captcha and stop the form submission
-			setErrors({ captcha: "Please verify you are not a robot." });
-			setLoading(false);
-			return;
-		}
-
-		// Create a FormData object from the form element to easily gather the form data
-		const formData = new FormData(e.target);
-
-		// Extract individual form values for validation
-		const formValues = {
-			name: formData.get("name"),
-			email: formData.get("email"),
-			message: formData.get("message"),
-		};
-
-		try {
-			// Validate the form values using the validation schema
-			await validationSchema.validate(formValues, { abortEarly: false });
-
-			// If validation is successful, clear any previous errors
-			setErrors({});
-
-			// Send the form data to the server (in this case, it's being sent to the root path '/')
-			const response = await fetch("/", {
-				method: "POST",
-				headers: {
-					"Content-Type": "application/x-www-form-urlencoded",
-				},
-				body: new URLSearchParams(formData).toString(),
-			});
-
-			// Check if the server responded with a success status
-			if (!response.ok) {
-				// If not, throw an error to be caught in the catch block
-				throw new Error("Network response was not ok");
-			}
-
-			// If the form was submitted successfully, show the thank you modal and reset the form
-			setIsModalOpen(true);
-			e.target.reset();
-		} catch (error) {
-			// Check if the error is a validation error
-			if (error instanceof yup.ValidationError) {
-				// If it is, transform the validation errors into a more usable format
-				const errorMessages = {};
-				error.inner.forEach((err) => {
-					errorMessages[err.path] = err.message;
-				});
-				// Set the errors to state to be displayed on the form
-				setErrors(errorMessages);
-			} else {
-				// If it's not a validation error, it's a network or other error. Handle it accordingly.
-				setErrors({
-					form:
-						"There was a problem with the form submission: " +
-						error.message,
-				});
-			}
-		}
-
-		// Set the loading state back to false to indicate the form processing is done
-		setLoading(false);
-	};
-
-	return (
-		<div className="w-full lg:w-1/2">
-			<div className="leading-loose">
-				<form
-					onSubmit={handleSubmit}
+    return (
+        <div className="w-full lg:w-1/2">
+            <div className="leading-loose">
+                <form
+                    name="contact"
+                    method="POST"
+					data-netlify-recaptcha="true"
 					data-netlify="true"
-					name="contact"
-				>
-					<div dangerouslySetInnerHTML={{ __html: formHtml }}></div>
-					{/* ... (rest of the form fields) */}
-					<ReCAPTCHA
-						sitekey={process.env.REACT_APP_RECAPTCHA_SITE_KEY}
-						onChange={(value) => setCaptchaValue(value)}
+                    onSubmit={handleSubmit}
+                    className="max-w-xl m-4 p-6 sm:p-10 bg-secondary-light dark:bg-secondary-dark rounded-xl shadow-xl text-left"
+                >
+                    {error && <p className="text-red-500">{error}</p>}
+					<p className="font-general-medium text-primary-dark dark:text-primary-light text-2xl mb-8">
+						Contact Form
+					</p>
+					<FormInput
+						inputLabel="Full Name"
+						labelFor="name"
+						inputType="text"
+						inputId="name"
+						inputName="name"
+						placeholderText="Your Name"
+						ariaLabelName="Name"
 					/>
-					{errors.captcha && (
-						<div className="text-red-500">{errors.captcha}</div>
-					)}
+					<FormInput
+						inputLabel="Email"
+						labelFor="email"
+						inputType="email"
+						inputId="email"
+						inputName="email"
+						placeholderText="Your email"
+						ariaLabelName="Email"
+					/>
+					<FormInput
+						inputLabel="Subject"
+						labelFor="subject"
+						inputType="text"
+						inputId="subject"
+						inputName="subject"
+						placeholderText="Subject"
+						ariaLabelName="Subject"
+					/>
+					<input type="hidden" name="form-name" value="contact" />
+
+					<div className="mt-6">
+						<label
+							className="block text-lg text-primary-dark dark:text-primary-light mb-2"
+							htmlFor="message"
+						>
+							Message
+						</label>
+						<textarea
+							onChange={handleInputChange}
+							value={formData.message}
+							className="w-full px-5 py-2 border border-gray-300 dark:border-primary-dark border-opacity-50 text-primary-dark dark:text-secondary-light bg-ternary-light dark:bg-ternary-dark rounded-md shadow-sm text-md"
+							id="message"
+							name="message"
+							cols="14"
+							rows="6"
+							aria-label="Message"
+						></textarea>
+					</div>
+
 					<div className="font-general-medium w-40 px-4 py-2.5 text-white text-center font-medium tracking-wider bg-indigo-500 hover:bg-indigo-600 focus:ring-1 focus:ring-indigo-900 rounded-lg mt-6 duration-500">
-						<button
+						<Button
+							title="Send Message"
 							type="submit"
 							aria-label="Send Message"
-							disabled={loading}
-						>
-							{loading ? "Sending..." : "Send Message"}
-						</button>
+						/>
 					</div>
-					<ThankYouModal
-						isOpen={isModalOpen}
-						onClose={() => setIsModalOpen(false)}
-					/>
 				</form>
+				<ThankYouModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
 			</div>
 		</div>
 	);
