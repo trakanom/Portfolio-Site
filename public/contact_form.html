@@ -1,7 +1,5 @@
-<!-- public/contact_form.html -->
 <div class="w-full lg:w-100">
 	<div class="leading-loose">
-		<!-- Start of the form -->
 		<form
 			name="contact"
 			method="POST"
@@ -9,27 +7,24 @@
 			data-netlify="true"
 			class="max-w-xl m-4 p-6 sm:p-10 bg-secondary-light dark:bg-secondary-dark rounded-xl shadow-xl text-left"
 		>
-			<!-- Honeypot field for spam protection -->
 			<p class="hidden">
 				<label>
 					Don’t fill this out if you’re human:
 					<input name="bot-field" />
 				</label>
 			</p>
-			<!-- Error message placeholder -->
-			<p class="text-red-500" id="error-message"></p>
 			<p
 				class="font-general-medium text-primary-dark dark:text-primary-light text-2xl mb-8"
 			>
 				Contact Form
 			</p>
-			<!-- Name input -->
 			<div>
 				<label
 					for="name"
 					class="block text-lg text-primary-dark dark:text-primary-light mb-2"
-					>Full Name</label
 				>
+					Full Name
+				</label>
 				<input
 					type="text"
 					id="name"
@@ -39,13 +34,13 @@
 					class="w-full px-5 py-2 border border-gray-300 dark:border-primary-dark border-opacity-50 text-primary-dark dark:text-secondary-light bg-ternary-light dark:bg-ternary-dark rounded-md shadow-sm text-md"
 				/>
 			</div>
-			<!-- Email input -->
 			<div class="mt-6">
 				<label
 					for="email"
 					class="block text-lg text-primary-dark dark:text-primary-light mb-2"
-					>Email</label
 				>
+					Email
+				</label>
 				<input
 					type="email"
 					id="email"
@@ -55,13 +50,13 @@
 					class="w-full px-5 py-2 border border-gray-300 dark:border-primary-dark border-opacity-50 text-primary-dark dark:text-secondary-light bg-ternary-light dark:bg-ternary-dark rounded-md shadow-sm text-md"
 				/>
 			</div>
-			<!-- Message textarea -->
 			<div class="mt-6">
 				<label
 					for="message"
 					class="block text-lg text-primary-dark dark:text-primary-light mb-2"
-					>Message</label
 				>
+					Message
+				</label>
 				<textarea
 					id="message"
 					name="message"
@@ -71,19 +66,7 @@
 					class="w-full px-5 py-2 border border-gray-300 dark:border-primary-dark border-opacity-50 text-primary-dark dark:text-secondary-light bg-ternary-light dark:bg-ternary-dark rounded-md shadow-sm text-md"
 				></textarea>
 			</div>
-			<!-- reCAPTCHA -->
 			<div data-netlify-recaptcha="true"></div>
-			<!-- Submit button -->
-			<div
-				class="font-general-medium w-40 px-4 py-2.5 text-white text-center font-medium tracking-wider bg-indigo-500 hover:bg-indigo-600 focus:ring-1 focus:ring-indigo-900 rounded-lg mt-6 duration-500"
-			>
-				<button type="submit" aria-label="Send Message">
-					Send Message
-				</button>
-			</div>
 		</form>
-		<!-- End of the form -->
-		<!-- Placeholder for Thank You Modal. This will need to be handled with JavaScript or another method since React-specific code has been removed. -->
-		<div id="thank-you-modal" style="display: none"></div>
 	</div>
 </div>
