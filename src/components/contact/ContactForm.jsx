@@ -33,7 +33,7 @@ const ContactForm = () => {
 
 	// Handle form submission
 	const handleSubmit = async (e) => {
-		e.preventDefault();
+		// e.preventDefault();
 		setLoading(true);
 
 		// Check if captcha is verified
