@@ -1,48 +1,49 @@
-// Importing necessary libraries and components
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import ReCAPTCHA from "react-google-recaptcha";
 import ThankYouModal from "../ThankYouModal";
-import contactFormSchema from "../../../src/utils/validationSchemas";
+import validationSchema from "../../../src/utils/validationSchemas";
 import * as yup from "yup";
 
-/**
- * ContactForm Component
- * This component renders a contact form with reCAPTCHA validation and provides feedback to the user upon successful submission.
- */
+// ContactForm component for handling user inquiries.
 const ContactForm = () => {
-	// State management for modal visibility, form submission loading state, form errors, and reCAPTCHA value
-
+	// State for modal visibility
 	const [isModalOpen, setIsModalOpen] = useState(false);
+
+	// State to handle form submission loading status
 	const [loading, setLoading] = useState(false);
+
+	// State to store form errors
 	const [errors, setErrors] = useState({});
+
+	// State to store captcha value
 	const [captchaValue, setCaptchaValue] = useState(null);
-	const [formHtml, setFormHtml] = useState("");
-	// Using a predefined validation schema for form validation
-	const validationSchema = contactFormSchema;
-	useEffect(() => {
-		fetch("/contact_form.html")
-			.then((response) => response.text())
-			.then((data) => {
-				setFormHtml(data);
-			});
-	}, []);
-	/**
-	 * Handles the form submission.
-	 * Validates the form data, checks reCAPTCHA, and sends a POST request.
-	 * @param {Event} e - The form submission event
-	 */
+
+	// State to store form data
+	const [formData, setFormData] = useState({
+		name: "",
+		email: "",
+		message: "",
+	});
+
+	// Handle input
+	const handleInputChange = (e) => {
+		const { name, value } = e.target;
+		setFormData((prevState) => ({ ...prevState, [name]: value }));
+	};
+
+	// Handle form submission
 	const handleSubmit = async (e) => {
 		e.preventDefault();
 		setLoading(true);
 
-		// Check reCAPTCHA validation
+		// Check if captcha is verified
 		if (!captchaValue) {
 			setErrors({ captcha: "Please verify you are not a robot." });
 			setLoading(false);
 			return;
 		}
 
-		// Extract form data for validation and submission
+		// Extract form data
 		const formData = new FormData(e.target);
 		const formValues = {
 			name: formData.get("name"),
@@ -51,11 +52,11 @@ const ContactForm = () => {
 		};
 
 		try {
-			// Validate form data against the schema
+			// Validate form data against schema
 			await validationSchema.validate(formValues, { abortEarly: false });
 			setErrors({});
 
-			// Send the form data to the server
+			// Send form data to server
 			fetch("/", {
 				method: "POST",
 				headers: {
@@ -64,12 +65,10 @@ const ContactForm = () => {
 				body: new URLSearchParams(formData).toString(),
 			})
 				.then(() => {
-					// On successful submission, show a thank you modal and reset the form
 					setIsModalOpen(true);
 					e.target.reset();
 				})
 				.catch((error) => {
-					// Handle any network or server-side errors
 					setErrors({
 						form:
 							"There was a problem with the form submission: " +
@@ -77,7 +76,7 @@ const ContactForm = () => {
 					});
 				});
 		} catch (error) {
-			// Handle form validation errors
+			// Handle validation errors
 			if (error instanceof yup.ValidationError) {
 				const errorMessages = {};
 				error.inner.forEach((err) => {
@@ -85,7 +84,6 @@ const ContactForm = () => {
 				});
 				setErrors(errorMessages);
 			} else {
-				// Handle other types of errors
 				setErrors({
 					form:
 						"There was a problem with the form submission: " +
@@ -97,18 +95,75 @@ const ContactForm = () => {
 		setLoading(false);
 	};
 
-	// Render the contact form with reCAPTCHA and error handling
 	return (
 		<div className="w-full lg:w-1/2">
 			<div className="leading-loose">
 				<form
-					onSubmit={handleSubmit}
-					data-netlify="true"
 					name="contact"
+					method="POST"
+					data-netlify-recaptcha="true"
+					data-netlify="true"
+					onSubmit={handleSubmit}
+					className="max-w-xl m-4 p-6 sm:p-10 bg-secondary-light dark:bg-secondary-dark rounded-xl shadow-xl text-left"
 				>
 					<input type="hidden" name="form-name" value="contact" />
-					<div dangerouslySetInnerHTML={{ __html: formHtml }}></div>
-					{/* ... rest of your form fields ... */}
+					<p className="font-general-medium text-primary-dark dark:text-primary-light text-2xl mb-8">
+						Contact Form
+					</p>
+					<div className="mt-6">
+						<label
+							className="block text-lg text-primary-dark dark:text-primary-light mb-2"
+							htmlFor="name"
+						>
+							Your Name:
+							<input
+								type="text"
+								name="name"
+								id="name"
+								onChange={handleInputChange}
+								value={formData.name}
+								className="w-full px-5 py-2 border border-gray-300 dark:border-primary-dark border-opacity-50 text-primary-dark dark:text-secondary-light bg-ternary-light dark:bg-ternary-dark rounded-md shadow-sm text-md"
+								placeholder="Your Name"
+								aria-label="Name"
+							/>
+						</label>
+					</div>
+					<div className="mt-6">
+						<label
+							className="block text-lg text-primary-dark dark:text-primary-light mb-2"
+							htmlFor="email"
+						>
+							Your Email:
+							<input
+								type="email"
+								name="email"
+								id="email"
+								onChange={handleInputChange}
+								value={formData.email}
+								className="w-full px-5 py-2 border border-gray-300 dark:border-primary-dark border-opacity-50 text-primary-dark dark:text-secondary-light bg-ternary-light dark:bg-ternary-dark rounded-md shadow-sm text-md"
+								placeholder="Your Email"
+								aria-label="Email"
+							/>
+						</label>
+					</div>
+					<div className="mt-6">
+						<label
+							className="block text-lg text-primary-dark dark:text-primary-light mb-2"
+							htmlFor="message"
+						>
+							Message:
+							<textarea
+								name="message"
+								id="message"
+								cols="14"
+								rows="6"
+								onChange={handleInputChange}
+								value={formData.message}
+								className="w-full px-5 py-2 border border-gray-300 dark:border-primary-dark border-opacity-50 text-primary-dark dark:text-secondary-light bg-ternary-light dark:bg-ternary-dark rounded-md shadow-sm text-md"
+								aria-label="Message"
+							></textarea>
+						</label>
+					</div>
 					<ReCAPTCHA
 						sitekey={process.env.REACT_APP_RECAPTCHA_SITE_KEY}
 						onChange={(value) => setCaptchaValue(value)}
