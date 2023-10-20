@@ -5,16 +5,15 @@
 		<form
 			name="contact"
 			method="POST"
-			data-netlify-recaptcha="true"
-			netlify-honeypot="bot-field"
+			netlify-honeypot="btfield"
 			data-netlify="true"
 			class="max-w-xl m-4 p-6 sm:p-10 bg-secondary-light dark:bg-secondary-dark rounded-xl shadow-xl text-left"
 		>
 			<!-- Honeypot field for spam protection -->
 			<p class="hidden">
 				<label>
-					Don’t fill this out if you’re human:
-					<input name="bot-field" />
+					Fill this out if you're a bot:
+					<input name="btfield" />
 				</label>
 			</p>
 			<!-- Error message placeholder -->
@@ -73,7 +72,7 @@
 				></textarea>
 			</div>
 			<!-- reCAPTCHA -->
-			<div data-netlify-recaptcha="true"></div>
+			<!-- <div data-netlify-recaptcha="true"></div> -->
 			<!-- Submit button -->
 			<div
 				class="font-general-medium w-40 px-4 py-2.5 text-white text-center font-medium tracking-wider bg-indigo-500 hover:bg-indigo-600 focus:ring-1 focus:ring-indigo-900 rounded-lg mt-6 duration-500"
