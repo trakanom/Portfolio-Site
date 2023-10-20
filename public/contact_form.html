@@ -5,8 +5,10 @@
 			method="POST"
 			data-netlify-recaptcha="true"
 			data-netlify="true"
+			netlify-honeypot="bot-field"
 			class="max-w-xl m-4 p-6 sm:p-10 bg-secondary-light dark:bg-secondary-dark rounded-xl shadow-xl text-left"
 		>
+			<input type="hidden" name="form-name" value="contact" />
 			<p class="hidden">
 				<label>
 					Don’t fill this out if you’re human:

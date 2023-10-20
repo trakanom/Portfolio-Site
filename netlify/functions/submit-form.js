@@ -8,12 +8,6 @@ exports.handler = async function (event, context) {
 			body: JSON.stringify({ message: "Method Not Allowed" }),
 		};
 	}
-	if (!userResponseToken) {
-		return {
-			statusCode: 400,
-			body: JSON.stringify({ message: "reCAPTCHA verification missing" }),
-		};
-	}
 
 	const body = new URLSearchParams(event.body);
 	const userResponseToken = body.get("g-recaptcha-response");
@@ -25,6 +19,12 @@ exports.handler = async function (event, context) {
 	});
 
 	const verificationResult = await verificationResponse.json();
+	if (!userResponseToken) {
+		return {
+			statusCode: 400,
+			body: JSON.stringify({ message: "reCAPTCHA verification missing" }),
+		};
+	}
 
 	if (verificationResult.success) {
 		// reCAPTCHA was solved correctly
