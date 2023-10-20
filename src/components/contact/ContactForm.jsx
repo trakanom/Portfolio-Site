@@ -1,88 +1,91 @@
-//src/components/contact/ContactForm.jsx
-import React, { useState, useEffect } from "react";
-import * as yup from "yup";
+import React, { useState } from "react";
 import ReCAPTCHA from "react-google-recaptcha";
 import ThankYouModal from "../ThankYouModal";
-import contactFormSchema from "../../../src/utils/validationSchemas";
+import validationSchema from "../../../src/utils/validationSchemas";
+import * as yup from "yup";
 
+// ContactForm component for handling user inquiries.
 const ContactForm = () => {
+	// State for modal visibility
 	const [isModalOpen, setIsModalOpen] = useState(false);
-	const [formHtml, setFormHtml] = useState("");
+
+	// State to handle form submission loading status
 	const [loading, setLoading] = useState(false);
+
+	// State to store form errors
 	const [errors, setErrors] = useState({});
-	const validationSchema = contactFormSchema;
+
+	// State to store captcha value
 	const [captchaValue, setCaptchaValue] = useState(null);
 
-	useEffect(() => {
-		fetch("/contact_form.html")
-			.then((response) => response.text())
-			.then((data) => {
-				setFormHtml(data);
-			});
-	}, []);
+	// State to store form data
+	const [formData, setFormData] = useState({
+		name: "",
+		email: "",
+		message: "",
+	});
 
+	// Handle input
+	const handleInputChange = (e) => {
+		const { name, value } = e.target;
+		setFormData((prevState) => ({ ...prevState, [name]: value }));
+	};
+
+	// Handle form submission
 	const handleSubmit = async (e) => {
-		// Prevent the default form submission behavior
-		e.preventDefault();
-
-		// Set the loading state to true to indicate the form is being processed
+		// e.preventDefault();
 		setLoading(true);
 
-		// Check if the reCAPTCHA has been filled out
+		// Check if captcha is verified
 		if (!captchaValue) {
-			// If not, set an error for the captcha and stop the form submission
 			setErrors({ captcha: "Please verify you are not a robot." });
 			setLoading(false);
 			return;
 		}
 
-		// Create a FormData object from the form element to easily gather the form data
+		// Extract form data
 		const formData = new FormData(e.target);
-
-		// Extract individual form values for validation
 		const formValues = {
 			name: formData.get("name"),
 			email: formData.get("email"),
 			message: formData.get("message"),
 		};
+		// Log the form values for testing
+		console.log("Form Values:", formValues);
 
 		try {
-			// Validate the form values using the validation schema
+			// Validate form data against schema
 			await validationSchema.validate(formValues, { abortEarly: false });
-
-			// If validation is successful, clear any previous errors
 			setErrors({});
 
-			// Send the form data to the server (in this case, it's being sent to the root path '/')
-			const response = await fetch("/", {
+			// Send form data to server
+			fetch("/", {
 				method: "POST",
 				headers: {
 					"Content-Type": "application/x-www-form-urlencoded",
 				},
 				body: new URLSearchParams(formData).toString(),
-			});
-
-			// Check if the server responded with a success status
-			if (!response.ok) {
-				// If not, throw an error to be caught in the catch block
-				throw new Error("Network response was not ok");
-			}
-
-			// If the form was submitted successfully, show the thank you modal and reset the form
-			setIsModalOpen(true);
-			e.target.reset();
+			})
+				.then(() => {
+					setIsModalOpen(true);
+					e.target.reset();
+				})
+				.catch((error) => {
+					setErrors({
+						form:
+							"There was a problem with the form submission: " +
+							error.message,
+					});
+				});
 		} catch (error) {
-			// Check if the error is a validation error
+			// Handle validation errors
 			if (error instanceof yup.ValidationError) {
-				// If it is, transform the validation errors into a more usable format
 				const errorMessages = {};
 				error.inner.forEach((err) => {
 					errorMessages[err.path] = err.message;
 				});
-				// Set the errors to state to be displayed on the form
 				setErrors(errorMessages);
 			} else {
-				// If it's not a validation error, it's a network or other error. Handle it accordingly.
 				setErrors({
 					form:
 						"There was a problem with the form submission: " +
@@ -91,7 +94,6 @@ const ContactForm = () => {
 			}
 		}
 
-		// Set the loading state back to false to indicate the form processing is done
 		setLoading(false);
 	};
 
@@ -99,12 +101,71 @@ const ContactForm = () => {
 		<div className="w-full lg:w-1/2">
 			<div className="leading-loose">
 				<form
-					onSubmit={handleSubmit}
-					data-netlify="true"
 					name="contact"
+					method="POST"
+					data-netlify-recaptcha="true"
+					data-netlify="true"
+					onSubmit={handleSubmit}
+					className="max-w-xl m-4 p-6 sm:p-10 bg-secondary-light dark:bg-secondary-dark rounded-xl shadow-xl text-left"
 				>
-					<div dangerouslySetInnerHTML={{ __html: formHtml }}></div>
-					{/* ... (rest of the form fields) */}
+					<input type="hidden" name="form-name" value="contact" />
+					<p className="font-general-medium text-primary-dark dark:text-primary-light text-2xl mb-8">
+						Contact Form
+					</p>
+					<div className="mt-6">
+						<label
+							className="block text-lg text-primary-dark dark:text-primary-light mb-2"
+							htmlFor="name"
+						>
+							Your Name:
+							<input
+								type="text"
+								name="name"
+								id="name"
+								onChange={handleInputChange}
+								value={formData.name}
+								className="w-full px-5 py-2 border border-gray-300 dark:border-primary-dark border-opacity-50 text-primary-dark dark:text-secondary-light bg-ternary-light dark:bg-ternary-dark rounded-md shadow-sm text-md"
+								placeholder="Your Name"
+								aria-label="Name"
+							/>
+						</label>
+					</div>
+					<div className="mt-6">
+						<label
+							className="block text-lg text-primary-dark dark:text-primary-light mb-2"
+							htmlFor="email"
+						>
+							Your Email:
+							<input
+								type="email"
+								name="email"
+								id="email"
+								onChange={handleInputChange}
+								value={formData.email}
+								className="w-full px-5 py-2 border border-gray-300 dark:border-primary-dark border-opacity-50 text-primary-dark dark:text-secondary-light bg-ternary-light dark:bg-ternary-dark rounded-md shadow-sm text-md"
+								placeholder="Your Email"
+								aria-label="Email"
+							/>
+						</label>
+					</div>
+					<div className="mt-6">
+						<label
+							className="block text-lg text-primary-dark dark:text-primary-light mb-2"
+							htmlFor="message"
+						>
+							Message:
+							<textarea
+								name="message"
+								id="message"
+								cols="14"
+								rows="6"
+								onChange={handleInputChange}
+								value={formData.message}
+								className="w-full px-5 py-2 border border-gray-300 dark:border-primary-dark border-opacity-50 text-primary-dark dark:text-secondary-light bg-ternary-light dark:bg-ternary-dark rounded-md shadow-sm text-md"
+								aria-label="Message"
+							></textarea>
+						</label>
+					</div>
 					<ReCAPTCHA
 						sitekey={process.env.REACT_APP_RECAPTCHA_SITE_KEY}
 						onChange={(value) => setCaptchaValue(value)}
