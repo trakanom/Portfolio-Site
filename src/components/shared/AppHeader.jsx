@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { FiMenu, FiMoon, FiSun, FiX } from "react-icons/fi";
 import { Link } from "react-router-dom";
 import useThemeSwitcher from "../../hooks/useThemeSwitcher";
@@ -11,7 +11,23 @@ import Button from "../reusable/Button";
 const AppHeader = () => {
 	const [showMenu, setShowMenu] = useState(false);
 	const [showModal, setShowModal] = useState(false);
-	const [activeTheme, setTheme] = useThemeSwitcher();
+
+	// Check user's system preference for dark mode
+	const prefersDarkMode =
+		window.matchMedia &&
+		window.matchMedia("(prefers-color-scheme: dark)").matches;
+
+	// Get stored theme from localStorage or default to system preference or 'dark'
+	const storedTheme =
+		localStorage.getItem("user-theme") ||
+		(prefersDarkMode ? "dark" : "light");
+
+	const [activeTheme, setTheme] = useThemeSwitcher(storedTheme);
+
+	// Update localStorage whenever activeTheme changes
+	useEffect(() => {
+		localStorage.setItem("user-theme", activeTheme);
+	}, [activeTheme]);
 
 	function toggleMenu() {
 		if (!showMenu) {
@@ -20,6 +36,14 @@ const AppHeader = () => {
 			setShowMenu(false);
 		}
 	}
+	// Update the theme switcher function
+	const toggleTheme = () => {
+		if (activeTheme === "dark") {
+			setTheme("light");
+		} else {
+			setTheme("dark");
+		}
+	};
 
 	function showHireMeModal() {
 		if (!showModal) {
@@ -47,16 +71,16 @@ const AppHeader = () => {
 				<div className="flex justify-between items-center px-4 sm:px-0">
 					<div>
 						<Link to="/">
-							{activeTheme === "light" ? (
+							{activeTheme === "dark" ? (
 								<img
 									src={logoDark}
-									className="w-24 max-w-3242 max-h-24"
+									className="w-25 max-w-3242 max-h-24"
 									alt="Dark Logo"
 								/>
 							) : (
 								<img
 									src={logoLight}
-									className="w-24 max-w-3242 max-h-24"
+									className="w-25 max-w-3242 max-h-24"
 									alt="Light Logo"
 								/>
 							)}
@@ -65,7 +89,7 @@ const AppHeader = () => {
 
 					{/* Theme switcher small screen */}
 					<div
-						onClick={() => setTheme(activeTheme)}
+						onClick={toggleTheme}
 						aria-label="Theme Switcher"
 						className="block sm:hidden ml-0 bg-primary-light dark:bg-ternary-dark p-3 shadow-sm rounded-xl cursor-pointer"
 					>
@@ -128,14 +152,16 @@ const AppHeader = () => {
 					>
 						Contact
 					</Link>
-					<div className="border-t-2 pt-3 sm:pt-0 sm:border-t-0 border-primary-light dark:border-secondary-dark">
-						<span
-							onClick={showHireMeModal}
-							className="font-general-medium sm:hidden block text-left text-md bg-indigo-500 hover:bg-indigo-600 text-white shadow-sm rounded-sm px-4 py-2 mt-2 duration-300 w-24"
-							aria-label="Hire Me Button"
-						>
-							<Button title="Hire Me" />
-						</span>
+					<div
+						onClick={toggleTheme}
+						aria-label="Theme Switcher"
+						className="block sm:hidden ml-0 bg-primary-light dark:bg-ternary-dark p-3 shadow-sm rounded-xl cursor-pointer"
+					>
+						{activeTheme === "light" ? (
+							<FiMoon className="text-ternary-dark hover:text-gray-400 dark:text-ternary-light dark:hover:text-primary-light text-xl" />
+						) : (
+							<FiSun className="text-gray-200 hover:text-gray-50 text-xl" />
+						)}
 					</div>
 				</div>
 
@@ -178,11 +204,11 @@ const AppHeader = () => {
 
 					{/* Theme switcher large screen */}
 					<div
-						onClick={() => setTheme(activeTheme)}
+						onClick={toggleTheme}
 						aria-label="Theme Switcher"
 						className="ml-8 bg-primary-light dark:bg-ternary-dark p-3 shadow-sm rounded-xl cursor-pointer"
 					>
-						{activeTheme === "dark" ? (
+						{activeTheme === "light" ? (
 							<FiMoon className="text-ternary-dark hover:text-gray-400 dark:text-ternary-light dark:hover:text-primary-light text-xl" />
 						) : (
 							<FiSun className="text-gray-200 hover:text-gray-50 text-xl" />

@@ -1,6 +1,10 @@
 const changelogData = [
 	// Add your 5 latest changelog items here
 	{
+		date: "2023-10-21",
+		description: "Default dark mode with system preference override",
+	},
+	{
 		date: "2023-10-20",
 		description: "New logo, landing images, updated dark theme",
 	},

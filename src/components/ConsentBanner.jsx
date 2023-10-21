@@ -1,8 +1,6 @@
 import React from "react";
 
 function ConsentBanner({ onAccept, onDecline }) {
-	window.document.documentElement.classList.add("dark");
-	localStorage.setItem("theme", "dark");
 	return (
 		<div
 			style={styles.banner}
