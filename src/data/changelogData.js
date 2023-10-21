@@ -1,6 +1,14 @@
 const changelogData = [
 	// Add your 5 latest changelog items here
 	{
+		date: "2023-10-20",
+		description: "New logo, landing images, updated dark theme",
+	},
+	{
+		date: "2023-10-19",
+		description: "Working contact forms, try it out!",
+	},
+	{
 		date: "2023-10-17",
 		description: "Add resume, consent banner, add contact functionality",
 	},

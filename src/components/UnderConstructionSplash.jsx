@@ -31,14 +31,14 @@ const UnderConstructionSplash = ({ onClose }) => {
 				<div className="flex justify-between items-end p-5 border-t border-ternary-light dark:border-ternary-dark">
 					<button
 						onClick={onClose}
-						className="px-4 py-2 text-primary-light  bg-gray-600 hover:bg-ternary-dark dark:bg-gray-200 dark:text-secondary-dark dark:hover:bg-primary-light rounded-md focus:ring-1 focus:ring-indigo-900 duration-500"
+						className="px-4 py-2 text-primary-light  bg-indigo-500 hover:bg-ternary-dark  dark:hover:bg-primary-light rounded-md focus:ring-1 focus:ring-indigo-900 duration-500"
 						//  bg-indigo-500 hover:bg-indigo-600 rounded-md focus:ring-1 focus:ring-indigo-900 duration-500"
 					>
 						Continue to site
 					</button>
 					<button
 						onClick={() => setShowChangelog(!showChangelog)}
-						className="px-4 py-2 text-white bg-indigo-500 hover:bg-indigo-600 rounded-md focus:ring-1 focus:ring-indigo-900 duration-500"
+						className="px-4 py-2 text-primary-light   bg-gray-600 hover:bg-ternary-dark dark:bg-secondary-dark dark:text-secondary-light dark:hover:text-secondary-dark  dark:hover:bg-primary-light  rounded-md focus:ring-1 focus:ring-indigo-900 duration-500"
 					>
 						{showChangelog ? "Hide" : "Show"} Changelog
 					</button>

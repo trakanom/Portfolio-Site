@@ -10,9 +10,9 @@ module.exports = {
 				"secondary-light": "#FFFFFF",
 				"ternary-light": "#f6f7f8",
 
-				"primary-dark": "#0D2438",
-				"secondary-dark": "#102D44",
-				"ternary-dark": "#1E3851",
+				"primary-dark": "#11001C",
+				"secondary-dark": "#290025",
+				"ternary-dark": "#3D0137",
 			},
 			container: {
 				padding: {
