@@ -56,7 +56,7 @@ const AppBanner = () => {
 						aria-label="Download Resume"
 					>
 						<FiArrowDownCircle className="mr-2 sm:mr-3 h-5 w-5 sn:w-6 sm:h-6 duration-100"></FiArrowDownCircle>
-						<span className="text-sm sm:text-lg font-general-medium duration-100">
+						<span className=" text-sm sm:text-lg font-general-medium duration-100">
 							Download CV
 						</span>
 					</a>
