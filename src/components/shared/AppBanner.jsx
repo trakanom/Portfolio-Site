@@ -1,8 +1,8 @@
-import useThemeSwitcher from '../../hooks/useThemeSwitcher';
-import { FiArrowDownCircle } from 'react-icons/fi';
-import developerLight from '../../images/developer.png';
-import developerDark from '../../images/developer-dark.png';
-import { motion } from 'framer-motion';
+import useThemeSwitcher from "../../hooks/useThemeSwitcher";
+import { FiArrowDownCircle } from "react-icons/fi";
+import developerLight from "../../images/developer-trans.png";
+import developerDark from "../../images/developer-dark.png";
+import { motion } from "framer-motion";
 
 const AppBanner = () => {
 	const [activeTheme] = useThemeSwitcher();
@@ -11,7 +11,7 @@ const AppBanner = () => {
 		<motion.section
 			initial={{ opacity: 0 }}
 			animate={{ opacity: 1 }}
-			transition={{ ease: 'easeInOut', duration: 0.9, delay: 0.2 }}
+			transition={{ ease: "easeInOut", duration: 0.9, delay: 0.2 }}
 			className="flex flex-col sm:justify-between items-center sm:flex-row mt-12 md:mt-2"
 		>
 			<div className="w-full md:w-1/3 text-left">
@@ -19,7 +19,7 @@ const AppBanner = () => {
 					initial={{ opacity: 0 }}
 					animate={{ opacity: 1 }}
 					transition={{
-						ease: 'easeInOut',
+						ease: "easeInOut",
 						duration: 0.9,
 						delay: 0.1,
 					}}
@@ -31,7 +31,7 @@ const AppBanner = () => {
 					initial={{ opacity: 0 }}
 					animate={{ opacity: 1 }}
 					transition={{
-						ease: 'easeInOut',
+						ease: "easeInOut",
 						duration: 0.9,
 						delay: 0.2,
 					}}
@@ -43,7 +43,7 @@ const AppBanner = () => {
 					initial={{ opacity: 0 }}
 					animate={{ opacity: 1 }}
 					transition={{
-						ease: 'easeInOut',
+						ease: "easeInOut",
 						duration: 0.9,
 						delay: 0.3,
 					}}
@@ -65,12 +65,12 @@ const AppBanner = () => {
 			<motion.div
 				initial={{ opacity: 0, y: -180 }}
 				animate={{ opacity: 1, y: 0 }}
-				transition={{ ease: 'easeInOut', duration: 0.9, delay: 0.2 }}
+				transition={{ ease: "easeInOut", duration: 0.9, delay: 0.2 }}
 				className="w-full sm:w-2/3 text-right float-right mt-8 sm:mt-0"
 			>
 				<img
 					src={
-						activeTheme === 'dark' ? developerLight : developerDark
+						activeTheme === "dark" ? developerLight : developerDark
 					}
 					alt="Developer"
 				/>
