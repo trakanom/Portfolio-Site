@@ -1,12 +1,12 @@
-import { useState } from 'react';
-import { FiMenu, FiMoon, FiSun, FiX } from 'react-icons/fi';
-import { Link } from 'react-router-dom';
-import useThemeSwitcher from '../../hooks/useThemeSwitcher';
-import HireMeModal from '../HireMeModal';
-import logoLight from '../../images/logo-light.png';
-import logoDark from '../../images/logo-dark.png';
-import { motion } from 'framer-motion';
-import Button from '../reusable/Button';
+import { useState } from "react";
+import { FiMenu, FiMoon, FiSun, FiX } from "react-icons/fi";
+import { Link } from "react-router-dom";
+import useThemeSwitcher from "../../hooks/useThemeSwitcher";
+import HireMeModal from "../HireMeModal";
+import logoLight from "../../images/logo-light.png";
+import logoDark from "../../images/logo-dark.png";
+import { motion } from "framer-motion";
+import Button from "../reusable/Button";
 
 const AppHeader = () => {
 	const [showMenu, setShowMenu] = useState(false);
@@ -24,13 +24,13 @@ const AppHeader = () => {
 	function showHireMeModal() {
 		if (!showModal) {
 			document
-				.getElementsByTagName('html')[0]
-				.classList.add('overflow-y-hidden');
+				.getElementsByTagName("html")[0]
+				.classList.add("overflow-y-hidden");
 			setShowModal(true);
 		} else {
 			document
-				.getElementsByTagName('html')[0]
-				.classList.remove('overflow-y-hidden');
+				.getElementsByTagName("html")[0]
+				.classList.remove("overflow-y-hidden");
 			setShowModal(false);
 		}
 	}
@@ -47,7 +47,7 @@ const AppHeader = () => {
 				<div className="flex justify-between items-center px-4 sm:px-0">
 					<div>
 						<Link to="/">
-							{activeTheme === 'light' ? (
+							{activeTheme === "light" ? (
 								<img
 									src={logoDark}
 									className="w-24 max-w-3242 max-h-24"
@@ -69,7 +69,7 @@ const AppHeader = () => {
 						aria-label="Theme Switcher"
 						className="block sm:hidden ml-0 bg-primary-light dark:bg-ternary-dark p-3 shadow-sm rounded-xl cursor-pointer"
 					>
-						{activeTheme === 'dark' ? (
+						{activeTheme === "dark" ? (
 							<FiMoon className="text-ternary-dark hover:text-gray-400 dark:text-ternary-light dark:hover:text-primary-light text-xl" />
 						) : (
 							<FiSun className="text-gray-200 hover:text-gray-50 text-xl" />
@@ -103,8 +103,8 @@ const AppHeader = () => {
 				<div
 					className={
 						showMenu
-							? 'block m-0 sm:ml-4 mt-5 sm:mt-3 sm:flex p-5 sm:p-0 justify-center items-center shadow-lg sm:shadow-none'
-							: 'hidden'
+							? "block m-0 sm:ml-4 mt-5 sm:mt-3 sm:flex p-5 sm:p-0 justify-center items-center shadow-lg sm:shadow-none"
+							: "hidden"
 					}
 				>
 					<Link
@@ -182,7 +182,7 @@ const AppHeader = () => {
 						aria-label="Theme Switcher"
 						className="ml-8 bg-primary-light dark:bg-ternary-dark p-3 shadow-sm rounded-xl cursor-pointer"
 					>
-						{activeTheme === 'dark' ? (
+						{activeTheme === "dark" ? (
 							<FiMoon className="text-ternary-dark hover:text-gray-400 dark:text-ternary-light dark:hover:text-primary-light text-xl" />
 						) : (
 							<FiSun className="text-gray-200 hover:text-gray-50 text-xl" />
