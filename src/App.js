@@ -11,13 +11,14 @@ import UnderConstructionSplash from "./components/UnderConstructionSplash";
 import GoogleTagManager from "./components/GoogleTagManager";
 import ConsentBanner from "./components/ConsentBanner";
 import useAnalyticsConsent from "./hooks/useAnalyticsConsent";
-
+import BlogPost from "./components/blog/BlogPost";
 // Lazy-loaded components
 const About = React.lazy(() => import("./pages/AboutMe"));
 const Contact = React.lazy(() => import("./pages/Contact"));
 const Home = React.lazy(() => import("./pages/Home"));
 const Projects = React.lazy(() => import("./pages/Projects"));
 const ProjectSingle = React.lazy(() => import("./pages/ProjectSingle"));
+const Blog = React.lazy(() => import("./pages/Blog"));
 
 function App() {
 	const [showSplash, setShowSplash] = useState(true);
@@ -44,7 +45,10 @@ function App() {
 									}
 								/>
 								<Route path="about" element={<About />} />
+								<Route path="blog" element={<Blog />} />
 								<Route path="contact" element={<Contact />} />
+								<Route path="/blog/:id" component={BlogPost} />
+								<Route path="/blog" component={Blog} />
 							</Routes>
 						</Suspense>
 						<AppFooter />
