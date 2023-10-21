@@ -7,7 +7,6 @@ import CUSDImage from "../images/brands/cusd.png";
 import SOEImage from "../images/brands/soe_image.jpg";
 import DentalImage from "../images/brands/firstsierradental_trans.png";
 import SimpSecImage from "../images/brands/simpsec_tallerrect_trans_clean.png";
-// import PumaImage from '../images/brands/puma_gray.png';
 
 export const clientsHeading = "Associations";
 
