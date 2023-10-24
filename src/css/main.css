@@ -718,7 +718,7 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .border-primary-light {
 	--tw-border-opacity: 1;
-	border-color: rgb(247 248 252 / var(--tw-border-opacity));
+	border-color: rgb(250 232 244 / var(--tw-border-opacity));
 }
 .border-gray-200 {
 	--tw-border-opacity: 1;
@@ -749,7 +749,7 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .bg-primary-light {
 	--tw-bg-opacity: 1;
-	background-color: rgb(247 248 252 / var(--tw-bg-opacity));
+	background-color: rgb(250 232 244 / var(--tw-bg-opacity));
 }
 .bg-ternary-light {
 	--tw-bg-opacity: 1;
@@ -922,7 +922,7 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .text-primary-light {
 	--tw-text-opacity: 1;
-	color: rgb(247 248 252 / var(--tw-text-opacity));
+	color: rgb(250 232 244 / var(--tw-text-opacity));
 }
 .text-secondary-dark {
 	--tw-text-opacity: 1;
@@ -930,7 +930,7 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .text-ternary-dark {
 	--tw-text-opacity: 1;
-	color: rgb(61 1 55 / var(--tw-text-opacity));
+	color: rgb(0 0 0 / var(--tw-text-opacity));
 }
 .text-gray-500 {
 	--tw-text-opacity: 1;
@@ -1102,7 +1102,7 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .dark .dark\:text-primary-light {
 	--tw-text-opacity: 1;
-	color: rgb(247 248 252 / var(--tw-text-opacity));
+	color: rgb(250 232 244 / var(--tw-text-opacity));
 }
 .dark .dark\:text-ternary-light {
 	--tw-text-opacity: 1;
@@ -1126,7 +1126,7 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .dark .dark\:hover\:bg-primary-light:hover {
 	--tw-bg-opacity: 1;
-	background-color: rgb(247 248 252 / var(--tw-bg-opacity));
+	background-color: rgb(250 232 244 / var(--tw-bg-opacity));
 }
 .dark .dark\:hover\:text-indigo-400:hover {
 	--tw-text-opacity: 1;
@@ -1134,7 +1134,7 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .dark .dark\:hover\:text-primary-light:hover {
 	--tw-text-opacity: 1;
-	color: rgb(247 248 252 / var(--tw-text-opacity));
+	color: rgb(250 232 244 / var(--tw-text-opacity));
 }
 .dark .dark\:hover\:text-indigo-300:hover {
 	--tw-text-opacity: 1;
