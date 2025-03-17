@@ -302,7 +302,7 @@ export const projectsData = [
 				{
 					id: 4,
 					title: "Phone",
-					details: "+1 559-349-7545",
+					details: "+1 805-242-3330",
 				},
 			],
 			ObjectivesDetails:
